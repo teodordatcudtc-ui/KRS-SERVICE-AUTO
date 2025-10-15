@@ -6,6 +6,9 @@ import Image from 'next/image'
 import Button from '@/components/Button'
 import ServiceCard from '@/components/ServiceCard'
 import TestimonialCarousel from '@/components/TestimonialCarousel'
+import AnimatedBackground from '@/components/AnimatedBackground'
+import AnimatedCard from '@/components/AnimatedCard'
+import AnimatedText from '@/components/AnimatedText'
 import { Icons } from '@/components/IconSet'
 
 const services = [
@@ -56,33 +59,8 @@ const HomePage = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{ 
-              rotate: 360,
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ 
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-accent/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{ 
-              rotate: -360,
-              scale: [1, 0.9, 1]
-            }}
-            transition={{ 
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl"
-          />
-        </div>
+        {/* Animated Background */}
+        <AnimatedBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -109,18 +87,30 @@ const HomePage = () => {
               </div>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight">
+            <AnimatedText 
+              type="typing" 
+              className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight"
+              stagger={0.1}
+            >
               KRS SERVICE AUTO
-            </h1>
+            </AnimatedText>
             
-            <p className="text-xl md:text-2xl text-blue-accent font-medium max-w-3xl mx-auto">
+            <AnimatedText 
+              type="slide" 
+              delay={0.5}
+              className="text-xl md:text-2xl text-blue-accent font-medium max-w-3xl mx-auto mt-6"
+            >
               Reparații rapide. Calitate garantată.
-            </p>
+            </AnimatedText>
             
-            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <AnimatedText 
+              type="fade" 
+              delay={0.8}
+              className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mt-4"
+            >
               Service auto profesionist în București. Oferim servicii complete de reparații, 
               diagnoză, vulcanizare și montaj anvelope cu echipamente moderne și personal calificat.
-            </p>
+            </AnimatedText>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Button 
@@ -179,16 +169,15 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <AnimatedCard
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                delay={index * 0.1}
+                hoverScale={1.02}
+                glowEffect={true}
                 className="h-full"
               >
                 <ServiceCard {...service} className="h-full flex flex-col" />
-              </motion.div>
+              </AnimatedCard>
             ))}
           </div>
 
@@ -252,13 +241,12 @@ const HomePage = () => {
                 icon: <Icons.Clock className="w-8 h-8" />
               }
             ].map((stat, index) => (
-              <motion.div
+              <AnimatedCard
                 key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center group"
+                delay={index * 0.1}
+                hoverScale={1.05}
+                glowEffect={true}
+                className="text-center group card"
               >
                 <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
                   {stat.icon}
@@ -272,7 +260,7 @@ const HomePage = () => {
                 <p className="text-gray-text text-sm leading-relaxed">
                   {stat.description}
                 </p>
-              </motion.div>
+              </AnimatedCard>
             ))}
           </div>
         </div>

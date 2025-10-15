@@ -2,28 +2,24 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isWhitePage, setIsWhitePage] = useState(false)
+  const pathname = usePathname()
+  
+  // Check if current page has white background
+  const whitePages = ['/servicii', '/despre-noi', '/contact', '/faq', '/politica-gdpr', '/termeni-conditii']
+  const isWhitePage = whitePages.includes(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
     
-    // Check if current page has white background
-    const checkPageBackground = () => {
-      const path = window.location.pathname
-      const whitePages = ['/servicii', '/despre-noi', '/contact', '/faq', '/politica-gdpr', '/termeni-conditii']
-      setIsWhitePage(whitePages.includes(path))
-    }
-    
-    // Check on mount and when path changes
-    checkPageBackground()
     window.addEventListener('scroll', handleScroll)
     
     return () => window.removeEventListener('scroll', handleScroll)

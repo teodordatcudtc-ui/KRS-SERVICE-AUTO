@@ -33,7 +33,9 @@
   }
   
   .gradient-hero {
-    background: linear-gradient(135deg, #071A2B 0%, #1461D9 100%);
+    background: linear-gradient(-45deg, #071A2B, #1461D9, #4AB3FF, #071A2B);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
   
   .text-gradient {
@@ -55,5 +57,30 @@
   
   .animate-float {
     animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
