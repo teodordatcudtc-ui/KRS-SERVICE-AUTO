@@ -27,7 +27,7 @@ const FloatingAppointmentButton = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           >
             <motion.button
               onClick={handleOpen}
@@ -48,9 +48,9 @@ const FloatingAppointmentButton = () => {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-72 sm:w-80 border border-gray-100">
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-heading font-semibold text-navy">
@@ -76,7 +76,7 @@ const FloatingAppointmentButton = () => {
                   href="tel:0769393545"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center space-x-3 w-full bg-blue-primary text-white p-4 rounded-xl hover:bg-blue-accent transition-colors"
+                  className="flex items-center space-x-3 w-full bg-blue-primary text-white p-3 sm:p-4 rounded-xl hover:bg-blue-accent transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   <div className="text-left">
@@ -92,7 +92,7 @@ const FloatingAppointmentButton = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center space-x-3 w-full bg-green-500 text-white p-4 rounded-xl hover:bg-green-600 transition-colors"
+                  className="flex items-center space-x-3 w-full bg-green-500 text-white p-3 sm:p-4 rounded-xl hover:bg-green-600 transition-colors"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <div className="text-left">
@@ -122,7 +122,7 @@ const FloatingAppointmentButton = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           >
             <motion.button
               onClick={() => setIsOpen(true)}

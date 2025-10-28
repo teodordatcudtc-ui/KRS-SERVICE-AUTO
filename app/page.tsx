@@ -81,7 +81,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm"
+                className="hidden sm:inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm"
               >
                 <Icons.Award className="w-4 h-4 text-yellow-400" />
                 <span>20+ ani experiență • 1000+ clienți mulțumiți</span>
@@ -98,7 +98,7 @@ const HomePage = () => {
               <AnimatedText 
                 type="slide" 
                 delay={0.5}
-                className="text-xl md:text-2xl text-blue-accent font-medium"
+                className="hidden sm:block text-xl md:text-2xl text-blue-accent font-medium"
               >
                 Reparații rapide. Calitate garantată.
               </AnimatedText>
@@ -106,7 +106,7 @@ const HomePage = () => {
               <AnimatedText 
                 type="fade" 
                 delay={0.8}
-                className="text-lg text-white/90 leading-relaxed"
+                className="hidden sm:block text-lg text-white/90 leading-relaxed"
               >
                 Service auto profesionist în București. Oferim servicii complete de reparații, 
                 diagnoză, vulcanizare și montaj anvelope cu echipamente moderne și personal calificat.
@@ -117,7 +117,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                className="space-y-3"
+                className="hidden sm:block space-y-3"
               >
                 {[
                   'Diagnoză computerizată modernă',
