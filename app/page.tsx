@@ -63,7 +63,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-24">
+      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-20 sm:pt-24">
         {/* Animated Background */}
         <AnimatedBackground />
 
@@ -93,6 +93,15 @@ const HomePage = () => {
                 stagger={0.1}
               >
                 KRS SERVICE AUTO
+              </AnimatedText>
+              
+              {/* Mobile-only subtitle */}
+              <AnimatedText 
+                type="fade" 
+                delay={0.3}
+                className="sm:hidden text-lg text-blue-accent font-medium"
+              >
+                Service auto profesionist
               </AnimatedText>
               
               <AnimatedText 
@@ -205,8 +214,8 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-              {/* Stats Cards */}
-              <div className="grid grid-cols-2 gap-4 mt-8">
+              {/* Stats Cards - Desktop Grid / Mobile Carousel */}
+              <div className="hidden sm:grid grid-cols-2 gap-4 mt-8">
                 {[
                   { number: '20+', label: 'Ani Experiență' },
                   { number: '1000+', label: 'Clienți Mulțumiți' },
@@ -224,6 +233,38 @@ const HomePage = () => {
                     <div className="text-sm text-white/80">{stat.label}</div>
                   </motion.div>
                 ))}
+              </div>
+
+              {/* Mobile Carousel */}
+              <div className="sm:hidden mt-8 overflow-hidden">
+                <motion.div
+                  className="flex space-x-4"
+                  animate={{ x: [0, -100, -200, -300, 0] }}
+                  transition={{ 
+                    duration: 8, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 2
+                  }}
+                >
+                  {[
+                    { number: '20+', label: 'Ani Experiență' },
+                    { number: '1000+', label: 'Clienți Mulțumiți' },
+                    { number: '5000+', label: 'Reparații' },
+                    { number: '24/7', label: 'Suport' }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.5 + index * 0.1 }}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 flex-shrink-0 w-32"
+                    >
+                      <div className="text-xl font-bold text-white">{stat.number}</div>
+                      <div className="text-xs text-white/80">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
             </motion.div>
           </div>
