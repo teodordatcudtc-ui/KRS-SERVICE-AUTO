@@ -7,7 +7,7 @@ import { Icons } from '@/components/IconSet'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen pt-20 flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen pt-24 flex items-center justify-center bg-gray-50">
       <div className="max-w-2xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

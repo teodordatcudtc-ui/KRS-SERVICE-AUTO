@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
+import TopBar from './TopBar'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolledDown, setIsScrolledDown] = useState(false)
   const pathname = usePathname()
   
   // Check if current page has white background
@@ -17,7 +19,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      const scrollY = window.scrollY
+      setIsScrolled(scrollY > 10)
+      setIsScrolledDown(scrollY > 100) // Când scroll mai mult de 100px, header-ul se lipește de sus
     }
     
     window.addEventListener('scroll', handleScroll)
@@ -34,19 +38,15 @@ const Header = () => {
   ]
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isWhitePage
-          ? 'bg-white shadow-lg' 
-          : isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-            : 'bg-transparent'
-      }`}
-    >
+    <>
+      {!isScrolledDown && <TopBar />}
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed ${isScrolledDown ? 'top-0' : 'top-8'} left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg`}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-12 lg:h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
@@ -56,9 +56,7 @@ const Header = () => {
               <div className="w-8 h-8 bg-blue-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">K</span>
               </div>
-              <span className={`font-heading font-bold text-xl ${
-                isWhitePage || isScrolled ? 'text-navy' : 'text-white'
-              }`}>
+              <span className="font-heading font-bold text-xl text-navy">
                 KRS SERVICE AUTO
               </span>
             </motion.div>
@@ -70,9 +68,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium transition-colors duration-200 hover:text-blue-primary ${
-                  isWhitePage || isScrolled ? 'text-gray-700' : 'text-white'
-                }`}
+                className="font-medium transition-colors duration-200 hover:text-blue-primary text-gray-700"
               >
                 {item.name}
               </Link>
@@ -93,11 +89,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 rounded-md transition-colors ${
-              isWhitePage || isScrolled 
-                ? 'text-gray-700 hover:bg-gray-100' 
-                : 'text-white hover:bg-white/10'
-            }`}
+            className="lg:hidden p-2 rounded-md transition-colors text-gray-700 hover:bg-gray-100"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,8 +125,9 @@ const Header = () => {
             </div>
           </motion.div>
         )}
-      </div>
-    </motion.header>
+        </div>
+      </motion.header>
+    </>
   )
 }
 

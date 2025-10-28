@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
+import Link from 'next/link'
 
 interface ServiceCardProps {
   icon: ReactNode
@@ -9,6 +10,7 @@ interface ServiceCardProps {
   price?: string
   features?: string[]
   className?: string
+  href?: string
 }
 
 const ServiceCard = ({ 
@@ -18,17 +20,11 @@ const ServiceCard = ({
   duration, 
   price, 
   features = [], 
-  className = '' 
+  className = '',
+  href
 }: ServiceCardProps) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
-      className={`card group hover:shadow-2xl ${className}`}
-    >
+  const CardContent = () => (
+    <>
       <div className="flex items-center space-x-4 mb-4">
         <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary group-hover:bg-blue-primary group-hover:text-white transition-colors duration-200">
           {icon}
@@ -77,6 +73,25 @@ const ServiceCard = ({
           </ul>
         )}
       </div>
+    </>
+  )
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+      className={`card group hover:shadow-2xl ${className}`}
+    >
+      {href ? (
+        <Link href={href} className="block h-full">
+          <CardContent />
+        </Link>
+      ) : (
+        <CardContent />
+      )}
     </motion.div>
   )
 }

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Button from '@/components/Button'
 import ServiceCard from '@/components/ServiceCard'
+import Link from 'next/link'
 import { Icons } from '@/components/IconSet'
 
 const allServices = [
@@ -21,7 +22,8 @@ const allServices = [
       'Diagnosticare erori motor',
       'Raport detaliat cu recomandări'
     ],
-    category: 'diagnostice'
+    category: 'diagnostice',
+    href: '/servicii/diagnoza-auto'
   },
   {
     icon: <Icons.Tire className="w-6 h-6" />,
@@ -37,7 +39,8 @@ const allServices = [
       'Echilibrare roți',
       'Depozitare anvelope sezoniere'
     ],
-    category: 'anvelope'
+    category: 'anvelope',
+    href: '/servicii/vulcanizare'
   },
   {
     icon: <Icons.Settings className="w-6 h-6" />,
@@ -53,7 +56,8 @@ const allServices = [
       'Reparații sistem de răcire',
       'Verificare și reglaje generale'
     ],
-    category: 'mecanica'
+    category: 'mecanica',
+    href: '/servicii/mecanica-generala'
   },
   {
     icon: <Icons.CheckCircle className="w-6 h-6" />,
@@ -126,7 +130,7 @@ export default function ServiciiPage() {
   })
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
       <section className="py-20 gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -193,11 +197,21 @@ export default function ServiciiPage() {
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <ServiceCard {...service} className="h-full flex flex-col" />
+                  <ServiceCard
+                    icon={service.icon}
+                    title={service.title}
+                    description={service.description}
+                    duration={service.duration}
+                    price={service.price}
+                    features={service.features}
+                    href={service.href}
+                    className="h-full"
+                  />
                 </motion.div>
               ))}
             </div>
@@ -212,6 +226,161 @@ export default function ServiciiPage() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Service Process Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
+              Cum Funcționează Serviciile Noastre
+            </h2>
+            <p className="text-lg text-gray-text max-w-2xl mx-auto">
+              Un proces simplu și transparent pentru servicii auto de calitate
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Programare',
+                description: 'Contactezi-ne prin telefon sau formular online',
+                icon: <Icons.Calendar className="w-8 h-8" />
+              },
+              {
+                step: '02',
+                title: 'Diagnoză',
+                description: 'Efectuăm o diagnosticare completă cu echipamente moderne',
+                icon: <Icons.Wrench className="w-8 h-8" />
+              },
+              {
+                step: '03',
+                title: 'Reparație',
+                description: 'Executăm reparațiile cu piese de calitate și garanție',
+                icon: <Icons.Settings className="w-8 h-8" />
+              },
+              {
+                step: '04',
+                title: 'Livrare',
+                description: 'Îți predăm vehiculul reparat și îți explicăm ce am făcut',
+                icon: <Icons.CheckCircle className="w-8 h-8" />
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center group"
+              >
+                <div className="relative mb-6">
+                  <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    {item.step}
+                  </div>
+                </div>
+                <h3 className="text-xl font-heading font-semibold text-navy mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-text leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Equipment Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
+                  Echipamente Moderne
+                </h2>
+                <p className="text-lg text-gray-text leading-relaxed">
+                  Folosim cele mai noi tehnologii și echipamente pentru a-ți oferi 
+                  servicii de cea mai înaltă calitate.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: <Icons.Wrench className="w-6 h-6" />,
+                    title: 'Diagnosticare Computerizată',
+                    description: 'Echipamente moderne pentru identificarea precisă a problemelor'
+                  },
+                  {
+                    icon: <Icons.Settings className="w-6 h-6" />,
+                    title: 'Echipamente Profesionale',
+                    description: 'Instrumente și utilaje de ultimă generație pentru reparații'
+                  },
+                  {
+                    icon: <Icons.CheckCircle className="w-6 h-6" />,
+                    title: 'Control Calitate',
+                    description: 'Verificări complete după fiecare reparație pentru siguranță'
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy mb-1">{item.title}</h3>
+                      <p className="text-gray-text text-sm">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <Icons.Settings className="w-24 h-24 text-blue-primary mx-auto mb-4" />
+                    <p className="text-gray-600">Imagine: Echipamentele noastre moderne</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
