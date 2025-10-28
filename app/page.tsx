@@ -99,9 +99,9 @@ const HomePage = () => {
               <AnimatedText 
                 type="fade" 
                 delay={0.3}
-                className="sm:hidden text-lg text-blue-accent font-medium"
+                className="sm:hidden text-lg text-white font-medium"
               >
-                Service auto profesionist
+                Reparații rapide • Calitate garantată
               </AnimatedText>
               
               <AnimatedText 
