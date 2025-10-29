@@ -11,6 +11,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isScrolledDown, setIsScrolledDown] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollTop, setLastScrollTop] = useState(0)
   const pathname = usePathname()
   
   // Check if current page has white background
@@ -22,12 +24,27 @@ const Header = () => {
       const scrollY = window.scrollY
       setIsScrolled(scrollY > 10)
       setIsScrolledDown(scrollY > 100) // Când scroll mai mult de 100px, header-ul se lipește de sus
+      
+      // Hide/show header based on scroll direction
+      if (scrollY > 200) { // Only apply after scrolling past 200px
+        if (scrollY > lastScrollTop) {
+          // Scrolling down
+          setIsVisible(false)
+        } else {
+          // Scrolling up
+          setIsVisible(true)
+        }
+      } else {
+        setIsVisible(true)
+      }
+      
+      setLastScrollTop(scrollY <= 0 ? 0 : scrollY)
     }
     
     window.addEventListener('scroll', handleScroll)
     
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollTop])
 
   const navItems = [
     { name: 'Acasă', href: '/' },
@@ -42,8 +59,12 @@ const Header = () => {
       {!isScrolledDown && <TopBar />}
       <motion.header
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed ${isScrolledDown ? 'top-0' : 'top-8'} left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg`}
+        animate={{ 
+          y: isVisible ? 0 : -100,
+          top: isScrolledDown ? 0 : 8
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed left-0 right-0 z-50 bg-white shadow-lg`}
       >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-12 lg:h-14">
