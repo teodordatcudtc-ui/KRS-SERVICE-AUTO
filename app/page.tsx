@@ -63,7 +63,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-20 sm:pt-24">
+      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-24 sm:pt-28">
         {/* Animated Background */}
         <AnimatedBackground />
 
