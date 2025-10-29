@@ -18,7 +18,7 @@ const AnimatedText = ({
   delay = 0,
   stagger = 0.1,
   type = 'fade',
-  duration = 0.6
+  duration = 0.4
 }: AnimatedTextProps) => {
   const getVariants = () => {
     switch (type) {
@@ -29,18 +29,18 @@ const AnimatedText = ({
         }
       case 'slide':
         return {
-          hidden: { opacity: 0, y: 30 },
+          hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 }
         }
       case 'scale':
         return {
-          hidden: { opacity: 0, scale: 0.8 },
+          hidden: { opacity: 0, scale: 0.9 },
           visible: { opacity: 1, scale: 1 }
         }
       case 'typing':
         return {
-          hidden: { opacity: 0, x: -20 },
-          visible: { opacity: 1, x: 0 }
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 }
         }
       default:
         return {

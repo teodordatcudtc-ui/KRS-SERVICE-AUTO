@@ -15,46 +15,29 @@ const AnimatedCard = ({
   children, 
   className = '', 
   delay = 0,
-  hoverScale = 1.05,
+  hoverScale = 1.02,
   glowEffect = false
 }: AnimatedCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.4, delay, ease: "easeOut" }}
       whileHover={{ 
         scale: hoverScale,
-        y: -8,
-        transition: { duration: 0.2 }
+        y: -4,
+        transition: { duration: 0.15 }
       }}
       className={`relative group h-full ${className}`}
     >
       {glowEffect && (
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-blue-primary/20 to-blue-accent/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0, 0.3, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-primary/20 to-blue-accent/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
       )}
       
-      <motion.div
-        className="relative z-10 h-full flex flex-col"
-        whileHover={{
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-        }}
-        transition={{ duration: 0.2 }}
-      >
+      <div className="relative z-10 h-full flex flex-col group-hover:shadow-xl transition-shadow duration-200">
         {children}
-      </motion.div>
+      </div>
     </motion.div>
   )
 }

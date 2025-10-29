@@ -71,61 +71,65 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Column - Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center lg:text-left space-y-8"
             >
               {/* Trust Badge */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 className="hidden sm:inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm"
               >
                 <Icons.Award className="w-4 h-4 text-yellow-400" />
                 <span>20+ ani experiență • 1000+ clienți mulțumiți</span>
               </motion.div>
 
-              <AnimatedText 
-                type="typing" 
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
-                stagger={0.1}
               >
                 KRS SERVICE AUTO
-              </AnimatedText>
+              </motion.h1>
               
               {/* Mobile-only subtitle */}
-              <AnimatedText 
-                type="fade" 
-                delay={0.3}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="sm:hidden text-lg text-white font-medium"
               >
                 Reparații rapide • Calitate garantată
-              </AnimatedText>
+              </motion.p>
               
-              <AnimatedText 
-                type="slide" 
-                delay={0.5}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 className="hidden sm:block text-xl md:text-2xl text-blue-accent font-medium"
               >
                 Reparații rapide. Calitate garantată.
-              </AnimatedText>
+              </motion.p>
               
-              <AnimatedText 
-                type="fade" 
-                delay={0.8}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
                 className="hidden sm:block text-lg text-white/90 leading-relaxed"
               >
                 Service auto profesionist în București. Oferim servicii complete de reparații, 
                 diagnoză, vulcanizare și montaj anvelope cu echipamente moderne și personal calificat.
-              </AnimatedText>
+              </motion.p>
 
               {/* Features List */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
                 className="hidden sm:block space-y-3"
               >
                 {[
@@ -163,24 +167,13 @@ const HomePage = () => {
 
             {/* Right Column - Hero Image */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
               {/* Hero Image */}
-              <motion.div
-                animate={{ 
-                  y: [0, -10, 0],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{ 
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="relative"
-              >
+              <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
                     <div className="text-center">
@@ -212,7 +205,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Stats Cards - Desktop Grid / Mobile Carousel */}
               <div className="hidden sm:grid grid-cols-2 gap-4 mt-8">
@@ -237,34 +230,22 @@ const HomePage = () => {
 
               {/* Mobile Carousel */}
               <div className="sm:hidden mt-8 overflow-hidden">
-                <motion.div
-                  className="flex space-x-4"
-                  animate={{ x: [0, -100, -200, -300, 0] }}
-                  transition={{ 
-                    duration: 8, 
-                    repeat: Infinity, 
-                    ease: "linear",
-                    delay: 2
-                  }}
-                >
+                <div className="flex space-x-4">
                   {[
                     { number: '20+', label: 'Ani Experiență' },
                     { number: '1000+', label: 'Clienți Mulțumiți' },
                     { number: '5000+', label: 'Reparații' },
                     { number: '24/7', label: 'Suport' }
                   ].map((stat, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 1.5 + index * 0.1 }}
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 flex-shrink-0 w-32"
                     >
                       <div className="text-xl font-bold text-white">{stat.number}</div>
                       <div className="text-xs text-white/80">{stat.label}</div>
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>

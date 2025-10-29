@@ -29,14 +29,12 @@ const FloatingAppointmentButton = () => {
             exit={{ scale: 0, opacity: 0 }}
             className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           >
-            <motion.button
+            <button
               onClick={handleOpen}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="bg-blue-primary text-white p-4 rounded-full shadow-lg hover:bg-blue-accent transition-colors"
             >
               <MessageCircle className="w-6 h-6" />
-            </motion.button>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -72,10 +70,8 @@ const FloatingAppointmentButton = () => {
               {/* Buttons */}
               <div className="space-y-3">
                 {/* Phone Button */}
-                <motion.a
+                <a
                   href="tel:0769393545"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
                   className="flex items-center space-x-3 w-full bg-blue-primary text-white p-3 sm:p-4 rounded-xl hover:bg-blue-accent transition-colors"
                 >
                   <Phone className="w-5 h-5" />
@@ -83,15 +79,13 @@ const FloatingAppointmentButton = () => {
                     <div className="font-semibold">Sună acum</div>
                     <div className="text-sm opacity-90">0769393545</div>
                   </div>
-                </motion.a>
+                </a>
 
                 {/* WhatsApp Button */}
-                <motion.a
+                <a
                   href="https://wa.me/40769393545?text=Bună! Aș vrea să programez o vizită la service."
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
                   className="flex items-center space-x-3 w-full bg-green-500 text-white p-3 sm:p-4 rounded-xl hover:bg-green-600 transition-colors"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -99,7 +93,7 @@ const FloatingAppointmentButton = () => {
                     <div className="font-semibold">WhatsApp</div>
                     <div className="text-sm opacity-90">Mesaj rapid</div>
                   </div>
-                </motion.a>
+                </a>
               </div>
 
               {/* Minimize Button */}
@@ -124,14 +118,12 @@ const FloatingAppointmentButton = () => {
             exit={{ scale: 0, opacity: 0 }}
             className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
           >
-            <motion.button
+            <button
               onClick={() => setIsOpen(true)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="bg-blue-primary text-white p-4 rounded-full shadow-lg hover:bg-blue-accent transition-colors"
             >
               <MessageCircle className="w-6 h-6" />
-            </motion.button>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
