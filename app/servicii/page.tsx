@@ -92,20 +92,72 @@ const allServices = [
     category: 'anvelope'
   },
   {
-    icon: <Icons.Shield className="w-6 h-6" />,
-    title: 'ITP și Inspecții',
-    description: 'Pregătire pentru ITP și inspecții tehnice periodice. Te ajutăm să treci cu succes inspecția tehnică prin verificări complete și reparații necesare.',
-    duration: '1-2 ore',
+    icon: <Icons.Car className="w-6 h-6" />,
+    title: 'Vopsitorie Auto',
+    description: 'Vopsitorie profesională în cabină, cu materiale premium și potrivire exactă a culorii.',
+    duration: '1-3 zile',
+    price: 'Cotație la service',
+    features: [
+      'Vopsire elemente individuale',
+      'Polish și corecție lac',
+      'Îndepărtare zgârieturi',
+      'Potrivire culoare computerizată',
+      'Protecție ceramică la cerere',
+      'Garanție pentru lucrare'
+    ],
+    category: 'vopsitorie',
+    href: '/servicii/vopsitorie'
+  },
+  {
+    icon: <Icons.Settings className="w-6 h-6" />,
+    title: 'Tinichigerie Auto',
+    description: 'Îndreptare și reparații caroserie, înlocuire și aliniere elemente, pregătire pentru vopsire.',
+    duration: '1-5 zile',
+    price: 'Cotație la service',
+    features: [
+      'Îndreptare fără vopsire (PDR)',
+      'Reparații și înlocuiri aripi/uşi/capotă',
+      'Aliniere elemente caroserie',
+      'Dezolire și curățare rugină',
+      'Pregătire pentru vopsire',
+      'Garanție pentru lucrare'
+    ],
+    category: 'tinichigerie',
+    href: '/servicii/tinichigerie'
+  },
+  {
+    icon: <Icons.Settings className="w-6 h-6" />,
+    title: 'Electrică Auto',
+    description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',
+    duration: '1-3 ore',
     price: 'De la 150 lei',
     features: [
-      'Pregătire completă pentru ITP',
-      'Verificare toate sistemele',
-      'Reparații pentru trecerea ITP',
-      'Consultanță tehnică',
-      'Documentație necesară',
-      'Suport pentru re-inspecție'
+      'Diagnosticare erori electrice',
+      'Reparații alternator și demaror',
+      'Remediere probleme iluminare',
+      'Verificare și înlocuire senzori',
+      'Reparații instalație electrică',
+      'Diagnoză module electronice'
     ],
-    category: 'itp'
+    category: 'electrica',
+    href: '/servicii/electrica-auto'
+  },
+  {
+    icon: <Icons.Settings className="w-6 h-6" />,
+    title: 'Încărcare Freon (AC)',
+    description: 'Încărcare și verificare sistem climatizare cu freon conform specificațiilor producătorului.',
+    duration: '30-60 min',
+    price: 'De la 200 lei',
+    features: [
+      'Verificare pierderi și presiuni',
+      'Vidare și încărcare agent frigorific',
+      'Completare ulei compresor',
+      'Testare performanță răcire',
+      'Tratare mirosuri (opțional)',
+      'Garanție pentru lucrare'
+    ],
+    category: 'intretinere',
+    href: '/servicii/incarcare-freon'
   }
 ]
 
@@ -115,7 +167,9 @@ const categories = [
   { id: 'anvelope', name: 'Anvelope' },
   { id: 'mecanica', name: 'Mecanică' },
   { id: 'intretinere', name: 'Întreținere' },
-  { id: 'itp', name: 'ITP' }
+  { id: 'vopsitorie', name: 'Vopsitorie' },
+  { id: 'tinichigerie', name: 'Tinichigerie' },
+  { id: 'electrica', name: 'Electrică' }
 ]
 
 export default function ServiciiPage() {

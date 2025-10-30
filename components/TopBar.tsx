@@ -11,7 +11,7 @@ const topBarInfo = [
   },
   {
     icon: <Clock className="w-4 h-4" />,
-    text: "Lun-Vin: 08:00-18:00 | Sâm: 09:00-14:00"
+    text: "Lun-Vin: 09:00-18:00 | Sâm: 09:00-14:00"
   },
   {
     icon: <Phone className="w-4 h-4" />,

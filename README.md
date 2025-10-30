@@ -112,7 +112,7 @@ Site-ul este optimizat pentru toate dispozitivele:
 - **Adresă**: Strada Toporași 69, București 052034
 - **Telefon**: 0769393545
 - **Email**: contact@krs-service-auto.ro
-- **Program**: Luni-Vineri 08:00-18:00, Sâmbătă 09:00-14:00
+- **Program**: Luni-Vineri 09:00-18:00, Sâmbătă 09:00-14:00
 
 ## 🗺️ Google Maps
 

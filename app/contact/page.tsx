@@ -30,7 +30,7 @@ const services = [
 ]
 
 const timeSlots = [
-  '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
+  '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
 ]
 
 export default function ContactPage() {
@@ -210,7 +210,7 @@ export default function ContactPage() {
                       0769393545
                     </a>
                     <p className="text-sm text-gray-600 mt-1">
-                      Luni-Vineri: 08:00-18:00, Sâmbătă: 09:00-14:00
+                      Luni-Vineri: 09:00-18:00, Sâmbătă: 09:00-14:00
                     </p>
                   </div>
                 </div>
