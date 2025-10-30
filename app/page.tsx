@@ -93,7 +93,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
               >
-                KRS SERVICE AUTO
+                KRS SERVICE AUTO – Service auto profesionist în București
               </motion.h1>
               
               {/* Mobile-only subtitle */}
@@ -112,7 +112,7 @@ const HomePage = () => {
                 transition={{ duration: 0.4, delay: 0.4 }}
                 className="hidden sm:block text-xl md:text-2xl text-blue-accent font-medium"
               >
-                Reparații rapide. Calitate garantată.
+                Reparații rapide și durabile, realizate de specialiști certificați, cu garanție și piese de calitate pentru siguranța ta pe drum.
               </motion.p>
               
               <motion.p
@@ -160,7 +160,7 @@ const HomePage = () => {
                   size="lg"
                   className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-navy"
                 >
-                  Programează o vizită
+                  Rezervă online
                 </Button>
               </div>
             </motion.div>
@@ -360,7 +360,7 @@ const HomePage = () => {
             >
               <div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-                  De Ce Să Ne Alegi?
+                  Avantajele Noastre
                 </h2>
                 <p className="text-lg text-gray-text leading-relaxed">
                   Cu peste 20 de ani de experiență în domeniul auto, suntem lideri în 
@@ -432,7 +432,7 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              De Ce Să Ne Alegi?
+              De ce clienții ne aleg
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
               Peste 20 de ani de experiență și mii de reparații reușite
@@ -689,6 +689,33 @@ const HomePage = () => {
               >
                 Programează online
               </Button>
+            </div>
+            {/* Social Share */}
+            <div className="flex items-center justify-center gap-4 pt-2">
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkrs-service-auto.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 underline hover:text-white"
+              >
+                Distribuie pe Facebook
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?text=Recomand%20KRS%20SERVICE%20AUTO%20https%3A%2F%2Fkrs-service-auto.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 underline hover:text-white"
+              >
+                Trimite pe WhatsApp
+              </a>
+              <a
+                href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkrs-service-auto.ro&text=Service%20auto%20Bucuresti%20recomandat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 underline hover:text-white"
+              >
+                Share pe X
+              </a>
             </div>
           </motion.div>
         </div>

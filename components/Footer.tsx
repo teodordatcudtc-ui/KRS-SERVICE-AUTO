@@ -15,6 +15,16 @@ const Footer = () => {
               Service auto profesionist în București. Oferim servicii complete de reparații, 
               diagnoză, vulcanizare și montaj anvelope cu calitate garantată.
             </p>
+            <div>
+              <a
+                href="https://maps.google.com/?q=Strada+Topora%C8%99i+69,+Bucure%C8%99ti+052034"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-accent hover:text-white text-sm underline"
+              >
+                Vezi locația pe Google Maps
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}

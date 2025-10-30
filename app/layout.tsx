@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingAppointmentButton from '@/components/FloatingAppointmentButton'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -12,8 +13,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'KRS SERVICE AUTO — Reparații Auto Profesionale în București',
-  description: 'KRS SERVICE AUTO — Service auto profesionist pe Strada Toporași 69, București. Diagnoză, reparații, vulcanizare și montaj anvelope. Programează rapid: 0769393545.',
+  title: 'Service auto București | KRS SERVICE AUTO',
+  description: 'Service auto profesionist în București (Str. Toporași 69). Diagnoză computerizată, mecanică, vulcanizare, vopsitorie, tinichigerie și electrică. Programează la 0769393545.',
   keywords: 'service auto bucuresti, reparații auto, vulcanizare, montaj anvelope, diagnoză auto, KRS SERVICE AUTO',
   authors: [{ name: 'KRS SERVICE AUTO' }],
   creator: 'KRS SERVICE AUTO',
@@ -25,11 +26,11 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://krs-service-auto.ro'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://krs-service-auto.ro/',
   },
   openGraph: {
-    title: 'KRS SERVICE AUTO — Reparații Auto Profesionale în București',
-    description: 'Service auto profesionist pe Strada Toporași 69, București. Diagnoză, reparații, vulcanizare și montaj anvelope. Programează rapid: 0769393545.',
+    title: 'Service auto București | KRS SERVICE AUTO',
+    description: 'Service auto profesionist în București. Diagnoză, mecanică, vulcanizare, vopsitorie, tinichigerie și electrică. Programează: 0769393545.',
     url: 'https://krs-service-auto.ro',
     siteName: 'KRS SERVICE AUTO',
     images: [
@@ -45,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KRS SERVICE AUTO — Reparații Auto Profesionale în București',
-    description: 'Service auto profesionist pe Strada Toporași 69, București. Diagnoză, reparații, vulcanizare și montaj anvelope.',
+    title: 'Service auto București | KRS SERVICE AUTO',
+    description: 'Service auto profesionist în București. Diagnoză, mecanică, vulcanizare, vopsitorie, tinichigerie și electrică.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -81,7 +82,23 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1461D9" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://krs-service-auto.ro/",
+              "name": "KRS SERVICE AUTO",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://krs-service-auto.ro/servicii?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -174,6 +191,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-gray-50">
+        <BreadcrumbJsonLd />
         <Header />
         <main className="min-h-screen">
           {children}
