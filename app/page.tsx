@@ -94,38 +94,9 @@ const HomePage = () => {
                 transition={{ duration: 0.4, delay: 0.4 }}
                 className="hidden sm:block text-xl md:text-2xl text-blue-accent font-medium"
               >
-                Reparații rapide și durabile, realizate de specialiști certificați, cu garanție și piese de calitate pentru siguranța ta pe drum.
-              </motion.p>
-              
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
-                className="hidden sm:block text-lg text-white/90 leading-relaxed"
-              >
-                Service auto profesionist în București. Oferim servicii complete de reparații, 
-                diagnoză, vulcanizare și montaj anvelope cu echipamente moderne și personal calificat.
+                Reparații rapide și durabile, realizate de specialiști certificați cu garanție.
               </motion.p>
 
-              {/* Features List */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.6 }}
-                className="hidden sm:block space-y-3"
-              >
-                {[
-                  'Diagnoză computerizată modernă',
-                  'Reparații cu garanție completă',
-                  'Piese originale și aftermarket',
-                  'Programare online rapidă'
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3 text-white/90">
-                    <Icons.CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </motion.div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button 
