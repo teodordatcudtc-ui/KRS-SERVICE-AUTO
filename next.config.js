@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
+    unoptimized: false,
   },
   compress: true,
   poweredByHeader: false,

@@ -24,27 +24,27 @@ const AnimatedText = ({
     switch (type) {
       case 'fade':
         return {
-          hidden: { opacity: 0 },
+          hidden: { opacity: 1 },
           visible: { opacity: 1 }
         }
       case 'slide':
         return {
-          hidden: { opacity: 0, y: 20 },
+          hidden: { opacity: 1, y: 0 },
           visible: { opacity: 1, y: 0 }
         }
       case 'scale':
         return {
-          hidden: { opacity: 0, scale: 0.9 },
+          hidden: { opacity: 1, scale: 1 },
           visible: { opacity: 1, scale: 1 }
         }
       case 'typing':
         return {
-          hidden: { opacity: 0 },
+          hidden: { opacity: 1 },
           visible: { opacity: 1 }
         }
       default:
         return {
-          hidden: { opacity: 0 },
+          hidden: { opacity: 1 },
           visible: { opacity: 1 }
         }
     }
@@ -61,7 +61,7 @@ const AnimatedText = ({
           <motion.span
             key={index}
             variants={variants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
             transition={{
@@ -82,7 +82,7 @@ const AnimatedText = ({
     <motion.div
       className={className}
       variants={variants}
-      initial="hidden"
+      initial="visible"
       whileInView="visible"
       viewport={{ once: true }}
       transition={{

@@ -10,7 +10,7 @@ export default function NotFound() {
     <div className="min-h-screen pt-24 flex items-center justify-center bg-gray-50">
       <div className="max-w-2xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="space-y-8"
@@ -94,3 +94,4 @@ export default function NotFound() {
     </div>
   )
 }
+

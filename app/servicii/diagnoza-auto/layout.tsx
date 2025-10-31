@@ -19,3 +19,4 @@ export default function DiagnozaAutoLayout({
   return children
 }
 
+

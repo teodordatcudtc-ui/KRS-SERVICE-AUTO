@@ -12,6 +12,26 @@ import AnimatedCard from '@/components/AnimatedCard'
 import AnimatedText from '@/components/AnimatedText'
 import { Icons } from '@/components/IconSet'
 
+// Component for images with fallback
+const ImageWithFallback = ({ src, fallback, alt }: { src: string; fallback: string; alt: string }) => {
+  const [imgSrc, setImgSrc] = useState(src)
+
+  return (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      fill
+      className="object-cover"
+      unoptimized
+      onError={() => {
+        if (imgSrc !== fallback) {
+          setImgSrc(fallback)
+        }
+      }}
+    />
+  )
+}
+
 const services = [
   {
     icon: <Icons.Wrench className="w-6 h-6" />,
@@ -48,7 +68,7 @@ const HomePage = () => {
   const touchEndX = useRef<number | null>(null)
 
   const stats = [
-    { number: '20+', label: 'Ani Experiență' },
+    { number: '5+', label: 'Ani Experiență' },
     { number: '1000+', label: 'Clienți Mulțumiți' },
     { number: '5000+', label: 'Reparații' },
     { number: '24/7', label: 'Suport' }
@@ -81,34 +101,34 @@ const HomePage = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-24 sm:pt-28">
+      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-32 sm:pt-36">
         {/* Animated Background */}
         <AnimatedBackground />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Column - Text Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center lg:text-left space-y-8"
+              className="text-center lg:text-left space-y-8 relative z-20"
             >
               {/* Trust Badge */}
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="hidden sm:inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm"
               >
                 <Icons.Award className="w-4 h-4 text-yellow-400" />
-                <span>20+ ani experiență • 1000+ clienți mulțumiți</span>
+                <span>5+ ani experiență • 1000+ clienți mulțumiți</span>
               </motion.div>
 
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
@@ -118,7 +138,7 @@ const HomePage = () => {
               
               {/* Mobile-only subtitle */}
               <motion.p
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="sm:hidden text-lg text-white font-medium"
@@ -127,7 +147,7 @@ const HomePage = () => {
               </motion.p>
               
               <motion.p
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
                 className="hidden sm:block text-xl md:text-2xl text-blue-accent font-medium"
@@ -158,20 +178,23 @@ const HomePage = () => {
 
             {/* Right Column - Hero Image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative lg:max-w-md"
+              className="relative lg:max-w-2xl z-20"
             >
               {/* Hero Image */}
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center lg:aspect-square">
-                    <div className="text-center">
-                      <Icons.Car className="w-24 h-24 text-blue-primary mx-auto mb-4" />
-                      <p className="text-gray-600">Imagine: Atelierul nostru modern</p>
-                      <p className="text-sm text-gray-500 mt-2">Echipamente profesionale și personal calificat</p>
-                    </div>
+                  <div className="aspect-[4/3] lg:aspect-[16/9] relative">
+                    <Image
+                      src="/images/hero/hero-main.jpg"
+                      alt="Atelierul nostru modern - KRS SERVICE AUTO"
+                      fill
+                      className="object-cover"
+                      priority
+                      unoptimized
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
                 </div>
@@ -203,7 +226,7 @@ const HomePage = () => {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.5 + index * 0.1 }}
                     className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20"
@@ -268,7 +291,7 @@ const HomePage = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -314,7 +337,7 @@ const HomePage = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -334,20 +357,24 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Image */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <Icons.Car className="w-24 h-24 text-blue-primary mx-auto mb-4" />
-                    <p className="text-gray-600">Imagine: Atelierul nostru modern</p>
-                  </div>
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src="/images/about/workshop-main.jpg"
+                    alt="Atelierul nostru - KRS SERVICE AUTO"
+                    fill
+                    className="object-cover"
+                    priority
+                    unoptimized
+                  />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
               </div>
               
               {/* Floating Elements */}
@@ -364,7 +391,7 @@ const HomePage = () => {
 
             {/* Right Column - Content */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -375,7 +402,7 @@ const HomePage = () => {
               De ce clienții ne aleg
             </h2>
             <p className="text-lg text-gray-text leading-relaxed">
-              Cu peste 20 de ani de experiență în domeniul auto, suntem lideri în 
+              Cu peste 5+ ani de experiență în domeniul auto, suntem lideri în 
               serviciile de reparații și întreținere vehicule în București.
             </p>
           </div>
@@ -405,7 +432,7 @@ const HomePage = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -437,7 +464,7 @@ const HomePage = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -447,7 +474,7 @@ const HomePage = () => {
               De ce clienții ne aleg
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              Peste 20 de ani de experiență și mii de reparații reușite
+              Peste 5+ ani de experiență și mii de reparații reușite
             </p>
           </motion.div>
 
@@ -505,9 +532,9 @@ const HomePage = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -550,7 +577,7 @@ const HomePage = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -580,7 +607,7 @@ const HomePage = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -599,33 +626,40 @@ const HomePage = () => {
               {
                 title: 'Zona de Diagnosticare',
                 description: 'Echipamente computerizate moderne',
-                placeholder: 'Imagine: Echipamente de diagnosticare'
+                image: '/images/about/workshop-2.jpg',
+                fallback: '/images/about/workshop-main.jpg',
+                alt: 'Echipamente moderne de diagnosticare'
               },
               {
                 title: 'Zona de Reparații',
                 description: 'Atelier spațios și organizat',
-                placeholder: 'Imagine: Atelierul de reparații'
+                image: '/images/about/workshop-1.jpg',
+                fallback: '/images/about/workshop-main.jpg',
+                alt: 'Atelierul nostru - zona de reparații'
               },
               {
                 title: 'Zona de Vulcanizare',
                 description: 'Echipamente profesionale pentru anvelope',
-                placeholder: 'Imagine: Zona de vulcanizare'
+                image: '/images/about/workshop-3.jpg',
+                fallback: '/images/about/workshop-main.jpg',
+                alt: 'Zona de vulcanizare și montaj anvelope'
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 1, scale: 1 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
                 <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <Icons.Car className="w-16 h-16 text-blue-primary mx-auto mb-3" />
-                      <p className="text-gray-600 text-sm">{item.placeholder}</p>
-                    </div>
+                  <div className="aspect-[4/3] relative bg-gray-200">
+                    <ImageWithFallback
+                      src={item.image}
+                      fallback={item.fallback}
+                      alt={item.alt}
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -650,7 +684,7 @@ const HomePage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -672,7 +706,7 @@ const HomePage = () => {
       <section className="py-20 gradient-hero">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -737,3 +771,4 @@ const HomePage = () => {
 }
 
 export default HomePage
+

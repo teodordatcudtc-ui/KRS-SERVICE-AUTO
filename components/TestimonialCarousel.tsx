@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Star, Pause, Play } from 'lucide-react'
+import { Star } from 'lucide-react'
 
 interface Testimonial {
   id: number
@@ -46,31 +46,24 @@ const testimonials: Testimonial[] = [
 
 const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isFirstRender, setIsFirstRender] = useState(true)
 
   useEffect(() => {
-    if (!isPlaying) return
+    // Mark as not first render immediately after mount
+    setIsFirstRender(false)
+    
+    // Start interval immediately after component mounts (only on client)
+    if (typeof window !== 'undefined') {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => {
+          const nextIndex = prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+          return nextIndex
+        })
+      }, 10000) // 10 secunde
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      )
-    }, 6000)
-
-    return () => clearInterval(interval)
-  }, [isPlaying])
-
-  const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)
-  }
-
-  const goToNext = () => {
-    setCurrentIndex(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
+      return () => clearInterval(interval)
+    }
+  }, [testimonials.length])
 
   return (
     <div className="relative max-w-4xl mx-auto">
@@ -79,10 +72,10 @@ const TestimonialCarousel = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={isFirstRender ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
             className="text-center"
           >
             <div className="mb-6">
@@ -110,45 +103,17 @@ const TestimonialCarousel = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="flex items-center justify-center space-x-4 mt-8">
-        <button
-          onClick={goToPrevious}
-          className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft className="w-5 h-5 text-gray-600" />
-        </button>
-
-        <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="p-2 rounded-full bg-blue-primary text-white hover:bg-blue-accent transition-colors"
-          aria-label={isPlaying ? 'Pause' : 'Play'}
-        >
-          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-        </button>
-
-        <button
-          onClick={goToNext}
-          className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Next testimonial"
-        >
-          <ChevronRight className="w-5 h-5 text-gray-600" />
-        </button>
-      </div>
-
       {/* Dots Indicator */}
       <div className="flex justify-center space-x-2 mt-6">
         {testimonials.map((_, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
               index === currentIndex 
                 ? 'bg-blue-primary scale-125' 
-                : 'bg-gray-300 hover:bg-gray-400'
+                : 'bg-gray-300'
             }`}
-            aria-label={`Go to testimonial ${index + 1}`}
+            aria-label={`Testimonial ${index + 1}`}
           />
         ))}
       </div>

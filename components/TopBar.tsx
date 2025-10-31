@@ -6,54 +6,55 @@ import { MapPin, Clock, Phone } from 'lucide-react'
 
 const topBarInfo = [
   {
-    icon: <MapPin className="w-4 h-4" />,
-    text: "Strada Toporași 69, București 052034"
+    iconType: 'MapPin',
+    text: "Strada Toporași 69, București"
   },
   {
-    icon: <Clock className="w-4 h-4" />,
+    iconType: 'Clock',
     text: "Lun-Vin: 09:00-18:00 | Sâm: 09:00-14:00"
   },
   {
-    icon: <Phone className="w-4 h-4" />,
+    iconType: 'Phone',
     text: "0769393545"
   }
 ]
 
 const TopBar = () => {
   const [currentInfoIndex, setCurrentInfoIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollTop, setLastScrollTop] = useState(0)
+  const [isVisible] = useState(true)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Rotate info every 7 seconds
-    const interval = setInterval(() => {
-      setCurrentInfoIndex((prev) => (prev + 1) % topBarInfo.length)
-    }, 7000)
+    // Set mounted immediately
+    setMounted(true)
     
-    return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    // Hide TopBar when scrolling down past 50px
-    const handleScroll = () => {
-      const scrollY = window.scrollY
+    // Start interval immediately after component mounts (only on client)
+    if (typeof window !== 'undefined') {
+      const interval = setInterval(() => {
+        setCurrentInfoIndex((prev) => {
+          const nextIndex = (prev + 1) % topBarInfo.length
+          return nextIndex
+        })
+      }, 7000)
       
-      // More aggressive hiding - hide at just 1px of scroll
-      if (scrollY > 1) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
-      
-      setLastScrollTop(scrollY <= 0 ? 0 : scrollY)
+      return () => clearInterval(interval)
     }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const currentInfo = topBarInfo[currentInfoIndex]
+
+  const renderIcon = () => {
+    switch (currentInfo.iconType) {
+      case 'MapPin':
+        return <MapPin className="w-4 h-4" />
+      case 'Clock':
+        return <Clock className="w-4 h-4" />
+      case 'Phone':
+        return <Phone className="w-4 h-4" />
+      default:
+        return null
+    }
+  }
 
   if (!isVisible) return null
 
@@ -69,14 +70,14 @@ const TopBar = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentInfoIndex}
-            initial={{ opacity: 0, y: -5 }}
+            initial={mounted ? { opacity: 0, y: -5 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
             transition={{ duration: 0.3 }}
             className="flex items-center justify-center space-x-2"
           >
-            <div className="text-blue-accent">{currentInfo.icon}</div>
-            <span className="text-sm font-medium">{currentInfo.text}</span>
+            <div className="text-blue-accent">{renderIcon()}</div>
+            <span className="text-sm font-medium text-white">{currentInfo.text}</span>
           </motion.div>
         </AnimatePresence>
       </div>

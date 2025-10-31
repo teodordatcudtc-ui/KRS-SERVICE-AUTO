@@ -46,7 +46,6 @@ const Header = () => {
   return (
     <>
       <TopBar />
-      
       {/* Header - slides up/down based on scroll */}
       <motion.header
         initial={{ y: 0 }}

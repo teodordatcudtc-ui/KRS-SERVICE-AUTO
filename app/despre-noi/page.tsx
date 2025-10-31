@@ -1,10 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Button from '@/components/Button'
-import Modal from '@/components/Modal'
 import { Icons } from '@/components/IconSet'
 
 const teamMembers = [
@@ -13,21 +11,21 @@ const teamMembers = [
     role: 'Manager & Mecanic Șef',
     experience: '15 ani experiență',
     description: 'Specialist în reparații motor și transmisie, cu certificări internaționale.',
-    image: '/team/cristian.jpg'
+    icon: Icons.Award
   },
   {
     name: 'Alexandru Ionescu',
     role: 'Mecanic Senior',
     experience: '12 ani experiență',
     description: 'Expert în sistemul de frânare și suspensie, cu atenție la detalii.',
-    image: '/team/alexandru.jpg'
+    icon: Icons.Wrench
   },
   {
     name: 'Mihai Dumitrescu',
     role: 'Specialist Anvelope',
     experience: '8 ani experiență',
     description: 'Specialist în vulcanizare și montaj anvelope, cu echipamente moderne.',
-    image: '/team/mihai.jpg'
+    icon: Icons.Tire
   }
 ]
 
@@ -54,17 +52,7 @@ const values = [
   }
 ]
 
-const galleryImages = [
-  { src: '/gallery/workshop-1.jpg', alt: 'Atelierul nostru - zona de reparații' },
-  { src: '/gallery/workshop-2.jpg', alt: 'Echipamente moderne de diagnosticare' },
-  { src: '/gallery/workshop-3.jpg', alt: 'Zona de vulcanizare și montaj anvelope' },
-  { src: '/gallery/team-work.jpg', alt: 'Echipa noastră la lucru' },
-  { src: '/gallery/before-after-1.jpg', alt: 'Reparație înainte și după' },
-  { src: '/gallery/before-after-2.jpg', alt: 'Reparație motor înainte și după' }
-]
-
 export default function DespreNoiPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen pt-24">
@@ -72,7 +60,7 @@ export default function DespreNoiPage() {
       <section className="py-20 gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-6"
@@ -81,7 +69,7 @@ export default function DespreNoiPage() {
               Despre Noi
             </h1>
             <p className="text-xl text-blue-accent max-w-3xl mx-auto">
-              Peste 20 de ani de experiență în service auto, dedicare și pasiune pentru calitate
+              Peste 5+ ani de experiență în service auto, dedicare și pasiune pentru calitate
             </p>
           </motion.div>
         </div>
@@ -92,7 +80,7 @@ export default function DespreNoiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -102,7 +90,7 @@ export default function DespreNoiPage() {
               </h2>
               <div className="space-y-4 text-gray-text leading-relaxed">
                 <p>
-                  KRS SERVICE AUTO a fost înființat în 2003 cu o viziune simplă: să oferim 
+                  KRS SERVICE AUTO a fost înființat în 2020 cu o viziune simplă: să oferim 
                   servicii auto de calitate superioară în București, cu focus pe profesionalism, 
                   transparență și satisfacția clienților.
                 </p>
@@ -120,27 +108,30 @@ export default function DespreNoiPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative"
             >
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/about/workshop-main.jpg"
-                  alt="Atelierul nostru principal"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
+                <div className="relative w-full aspect-[4/3]">
+                  <Image
+                    src="/images/about/workshop-main.jpg"
+                    alt="Atelierul nostru principal"
+                    fill
+                    className="object-cover"
+                    priority
+                    unoptimized
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
               </div>
               
               {/* Floating Stats */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-primary">20+</div>
+                  <div className="text-3xl font-bold text-blue-primary">5+</div>
                   <div className="text-sm text-gray-600">Ani experiență</div>
                 </div>
               </div>
@@ -160,7 +151,7 @@ export default function DespreNoiPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -178,7 +169,7 @@ export default function DespreNoiPage() {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -203,7 +194,7 @@ export default function DespreNoiPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -221,21 +212,15 @@ export default function DespreNoiPage() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="card text-center group hover:shadow-2xl"
               >
                 <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={128}
-                      height={128}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-32 h-32 mx-auto rounded-full bg-blue-primary/10 flex items-center justify-center">
+                    <member.icon className="w-16 h-16 text-blue-primary" />
                   </div>
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-navy mb-2">
@@ -256,60 +241,11 @@ export default function DespreNoiPage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Galerie Foto
-            </h2>
-            <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              O privire în atelierul nostru și în munca noastră de zi cu zi
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group cursor-pointer"
-                onClick={() => setSelectedImage(image.src)}
-              >
-                <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={400}
-                    height={300}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Icons.Search className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 gradient-hero">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -322,14 +258,14 @@ export default function DespreNoiPage() {
               Contactează-ne pentru o programare și descoperă de ce clienții noștri ne aleg!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <a 
                 href="tel:0769393545" 
-                size="lg"
-                className="bg-white text-navy hover:bg-gray-100"
+                className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-white hover:bg-gray-100 px-8 py-4 text-lg shadow-lg hover:shadow-xl"
+                style={{ color: '#1e40af' }}
               >
-                <Icons.Phone className="w-5 h-5 mr-2" />
-                0769393545
-              </Button>
+                <Icons.Phone className="w-5 h-5 mr-2" style={{ color: '#1e40af' }} />
+                <span style={{ color: '#1e40af' }}>0769393545</span>
+              </a>
               <Button 
                 href="/contact" 
                 variant="outline" 
@@ -343,24 +279,7 @@ export default function DespreNoiPage() {
         </div>
       </section>
 
-      {/* Gallery Modal */}
-      <Modal
-        isOpen={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-        size="xl"
-      >
-        {selectedImage && (
-          <div className="relative">
-            <Image
-              src={selectedImage}
-              alt="Galerie"
-              width={800}
-              height={600}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-        )}
-      </Modal>
     </div>
   )
 }
+
