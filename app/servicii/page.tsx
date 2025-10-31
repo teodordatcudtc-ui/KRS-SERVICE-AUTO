@@ -60,38 +60,6 @@ const allServices = [
     href: '/servicii/mecanica-generala'
   },
   {
-    icon: <Icons.CheckCircle className="w-6 h-6" />,
-    title: 'Revizii și Întreținere',
-    description: 'Revizii periodice și întreținere preventivă pentru siguranța ta pe drum. Respectăm programul de întreținere recomandat de producător pentru a menține vehiculul în stare optimă.',
-    duration: '2-3 ore',
-    price: 'De la 200 lei',
-    features: [
-      'Schimb ulei motor și filtru',
-      'Schimb filtru aer și combustibil',
-      'Verificare sistem de frânare',
-      'Verificare suspensie și direcție',
-      'Testare baterie și alternator',
-      'Verificare iluminat și semnalizare'
-    ],
-    category: 'intretinere'
-  },
-  {
-    icon: <Icons.Car className="w-6 h-6" />,
-    title: 'Montaj Anvelope',
-    description: 'Montaj și echilibrare anvelope de vară și iarnă cu echipamente profesionale. Oferim servicii complete de montaj, echilibrare și depozitare anvelope.',
-    duration: '30-45 min',
-    price: 'De la 40 lei',
-    features: [
-      'Montaj/Demontaj anvelope',
-      'Echilibrare roți profesionale',
-      'Depozitare anvelope sezoniere',
-      'Verificare uzură anvelope',
-      'Reglare geometrie roți',
-      'Servicii de urgență 24/7'
-    ],
-    category: 'anvelope'
-  },
-  {
     icon: <Icons.Car className="w-6 h-6" />,
     title: 'Vopsitorie Auto',
     description: 'Vopsitorie profesională în cabină, cu materiale premium și potrivire exactă a culorii.',

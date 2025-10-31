@@ -39,24 +39,6 @@ const services = [
     features: ['Reparații motor', 'Servisare frâne', 'Reparații transmisie'],
     href: '/servicii/mecanica-generala'
   },
-  {
-    icon: <Icons.CheckCircle className="w-6 h-6" />,
-    title: 'Revizii',
-    description: 'Revizii periodice și întreținere preventivă pentru siguranța ta pe drum.',
-    duration: '2-3 ore',
-    price: 'De la 200 lei',
-    features: ['Schimb ulei', 'Filtre', 'Verificare generală'],
-    href: '/servicii/revizii'
-  },
-  {
-    icon: <Icons.Car className="w-6 h-6" />,
-    title: 'Montaj Anvelope',
-    description: 'Montaj și echilibrare anvelope de vară și iarnă cu echipamente profesionale.',
-    duration: '30-45 min',
-    price: 'De la 40 lei',
-    features: ['Montaj/Demontaj', 'Echilibrare', 'Depozitare'],
-    href: '/servicii/montaj-anvelope'
-  }
 ]
 
 const HomePage = () => {

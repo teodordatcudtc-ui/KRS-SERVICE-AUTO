@@ -13,8 +13,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
-  description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză computerizată, mecanică, electrică, vopsitorie și vulcanizare. Programează telefonic: 0769393545.',
+  title: 'Service Auto București | KRS SERVICE AUTO',
+  description: 'Service auto în București cu peste 20 ani experiență. Diagnoză, mecanică, electrică, vopsitorie și vulcanizare. Programează: 0769393545.',
   keywords: 'service auto bucuresti, reparații auto, vulcanizare, montaj anvelope, diagnoză auto, KRS SERVICE AUTO',
   authors: [{ name: 'KRS SERVICE AUTO' }],
   creator: 'KRS SERVICE AUTO',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     canonical: 'https://krs-service-auto.ro/',
   },
   openGraph: {
-    title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
-    description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză, mecanică, electrică și vopsitorie. Programează: 0769393545.',
+    title: 'Service Auto București | KRS SERVICE AUTO',
+    description: 'Service auto în București cu peste 20 ani experiență. Diagnoză, mecanică, electrică și vopsitorie. Programează: 0769393545.',
     url: 'https://krs-service-auto.ro',
     siteName: 'KRS SERVICE AUTO',
     images: [
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
-    description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză, mecanică și electrică.',
+    title: 'Service Auto București | KRS SERVICE AUTO',
+    description: 'Service auto în București cu peste 20 ani experiență. Diagnoză, mecanică și electrică. Programează: 0769393545.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -171,20 +171,6 @@ export default function RootLayout({
                       "name": "Mecanică Generală"
                     }
                   },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Revizii"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Montaj Anvelope"
-                    }
-                  }
                 ]
               }
             })
