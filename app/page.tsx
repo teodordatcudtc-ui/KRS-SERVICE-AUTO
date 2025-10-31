@@ -93,7 +93,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
               >
-                KRS SERVICE AUTO
+                Service auto profesionist în București
               </motion.h1>
               
               {/* Mobile-only subtitle */}
@@ -309,7 +309,7 @@ const HomePage = () => {
             className="text-center mt-12"
           >
             <Button href="/servicii" size="lg">
-              Vezi toate serviciile
+              Explorează serviciile
               <Icons.ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </motion.div>
@@ -412,7 +412,7 @@ const HomePage = () => {
 
               <div className="pt-4">
                 <Button href="/despre-noi" size="lg">
-                  Află mai multe despre noi
+                  Despre serviciile noastre
                   <Icons.ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
@@ -627,7 +627,7 @@ const HomePage = () => {
 
           <div className="text-center mt-12">
             <Button href="/despre-noi" variant="outline" size="lg">
-              Vezi galeria completă
+              Explorează galeria
               <Icons.ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
@@ -687,7 +687,7 @@ const HomePage = () => {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-navy"
               >
-                Programează online
+                Rezervă serviciu
               </Button>
             </div>
             {/* Social Share */}

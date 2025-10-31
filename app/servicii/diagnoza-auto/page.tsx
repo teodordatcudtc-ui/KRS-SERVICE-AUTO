@@ -110,7 +110,7 @@ export default function DiagnozaAutoPage() {
                   size="lg"
                   className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-navy"
                 >
-                  Vezi toate serviciile
+                  Alte servicii
                 </Button>
               </div>
             </motion.div>
@@ -349,7 +349,7 @@ export default function DiagnozaAutoPage() {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-navy"
               >
-                Programează online
+                Rezervă online
               </Button>
             </div>
           </motion.div>

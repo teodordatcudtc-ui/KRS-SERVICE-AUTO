@@ -93,7 +93,7 @@ export default function VopsitoriePage() {
                   size="lg"
                   className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-navy"
                 >
-                  Vezi toate serviciile
+                  Servicii disponibile
                 </Button>
               </div>
             </motion.div>
@@ -269,7 +269,7 @@ export default function VopsitoriePage() {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-navy"
               >
-                Programează online
+                Solicită ofertă
               </Button>
             </div>
           </motion.div>

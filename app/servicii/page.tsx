@@ -469,7 +469,7 @@ export default function ServiciiPage() {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-navy"
               >
-                Programează online
+                Rezervă acum
               </Button>
             </div>
           </motion.div>
