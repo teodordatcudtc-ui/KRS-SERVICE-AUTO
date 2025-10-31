@@ -4,6 +4,8 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
   },
+  compress: true,
+  poweredByHeader: false,
   async headers() {
     return [
       {
@@ -20,6 +22,10 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

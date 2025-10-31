@@ -165,7 +165,7 @@ export default function DiagnozaAutoPage() {
                 <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary mx-auto mb-4">
                   <Icons.CheckCircle className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-navy mb-2">{feature}</h3>
+                <p className="font-semibold text-navy mb-2">{feature}</p>
               </AnimatedCard>
             ))}
           </div>
@@ -208,9 +208,9 @@ export default function DiagnozaAutoPage() {
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-navy mb-3">
+                <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>
@@ -255,7 +255,7 @@ export default function DiagnozaAutoPage() {
                       <Icons.CheckCircle className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-navy mb-1">{benefit}</h3>
+                      <p className="font-semibold text-navy mb-1">{benefit}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -311,7 +311,7 @@ export default function DiagnozaAutoPage() {
                 <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary mx-auto mb-4">
                   <Icons.Settings className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-navy mb-2">{item}</h3>
+                <p className="font-semibold text-navy mb-2">{item}</p>
               </AnimatedCard>
             ))}
           </div>

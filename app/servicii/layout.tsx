@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Servicii auto București | KRS',
-  description: 'Reparații auto complete în București: diagnoză, mecanică, electrică, vopsitorie, vulcanizare. Programează: 0769393545.',
+  title: 'Servicii Auto București - Diagnoză, Mecanică, Electrică | KRS',
+  description: 'Gamă completă de servicii auto în București: diagnoză computerizată, mecanică generală, electrică, vopsitorie, tinichigerie, vulcanizare și încărcare freon. Programează: 0769393545.',
   alternates: { canonical: 'https://krs-service-auto.ro/servicii' },
   openGraph: {
-    title: 'Servicii auto București | KRS',
-    description: 'Reparații auto complete în București. Programează: 0769393545.',
+    title: 'Servicii Auto București - Diagnoză, Mecanică, Electrică | KRS',
+    description: 'Gamă completă de servicii auto în București: diagnoză, mecanică, electrică, vopsitorie, vulcanizare. Programează: 0769393545.',
     url: 'https://krs-service-auto.ro/servicii'
   }
 }

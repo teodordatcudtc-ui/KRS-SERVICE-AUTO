@@ -148,7 +148,7 @@ export default function TinichigeriePage() {
                 <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary mx-auto mb-4">
                   <Icons.CheckCircle className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-navy mb-2">{feature}</h3>
+                <p className="font-semibold text-navy mb-2">{feature}</p>
               </AnimatedCard>
             ))}
           </div>
@@ -191,7 +191,7 @@ export default function TinichigeriePage() {
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-navy mb-3">
+                <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
                 </h3>
                 <p className="text-gray-text leading-relaxed">
@@ -231,7 +231,7 @@ export default function TinichigeriePage() {
                 <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary mx-auto mb-4">
                   <Icons.Settings className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-navy mb-2">{item}</h3>
+                <p className="font-semibold text-navy mb-2">{item}</p>
               </AnimatedCard>
             ))}
           </div>
@@ -252,7 +252,7 @@ export default function TinichigeriePage() {
               Ai Nevoie de Tinichigerie Auto?
             </h2>
             <p className="text-xl text-blue-accent max-w-2xl mx-auto">
-              Programează o evaluare pentru o ofertă corectă și reparații durabile!
+              Evaluare gratuită și ofertă corectă
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

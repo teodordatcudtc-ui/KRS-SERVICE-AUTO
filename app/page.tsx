@@ -359,56 +359,56 @@ const HomePage = () => {
               className="space-y-6"
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-                  Avantajele Noastre
-                </h2>
-                <p className="text-lg text-gray-text leading-relaxed">
-                  Cu peste 20 de ani de experiență în domeniul auto, suntem lideri în 
-                  serviciile de reparații și întreținere vehicule în București.
-                </p>
-              </div>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
+              De ce clienții ne aleg
+            </h2>
+            <p className="text-lg text-gray-text leading-relaxed">
+              Cu peste 20 de ani de experiență în domeniul auto, suntem lideri în 
+              serviciile de reparații și întreținere vehicule în București.
+            </p>
+          </div>
 
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: <Icons.Shield className="w-6 h-6" />,
-                    title: 'Garanție Completă',
-                    description: 'Toate reparațiile beneficiază de garanție extinsă'
-                  },
-                  {
-                    icon: <Icons.Clock className="w-6 h-6" />,
-                    title: 'Reparații Rapide',
-                    description: 'Echipamente moderne pentru diagnosticare și reparații eficiente'
-                  },
-                  {
-                    icon: <Icons.Award className="w-6 h-6" />,
-                    title: 'Personal Calificat',
-                    description: 'Mecanici certificați cu experiență internațională'
-                  },
-                  {
-                    icon: <Icons.Users className="w-6 h-6" />,
-                    title: 'Servicii Personalizate',
-                    description: 'Fiecare client primește atenție individualizată'
-                  }
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-navy mb-1">{item.title}</h3>
-                      <p className="text-gray-text text-sm">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+          <div className="space-y-4">
+            {[
+              {
+                icon: <Icons.Shield className="w-6 h-6" />,
+                title: 'Garanție Completă',
+                description: 'Toate reparațiile beneficiază de garanție extinsă'
+              },
+              {
+                icon: <Icons.Clock className="w-6 h-6" />,
+                title: 'Reparații Rapide',
+                description: 'Echipamente moderne pentru diagnosticare și reparații eficiente'
+              },
+              {
+                icon: <Icons.Award className="w-6 h-6" />,
+                title: 'Personal Calificat',
+                description: 'Mecanici certificați cu experiență internațională'
+              },
+              {
+                icon: <Icons.Users className="w-6 h-6" />,
+                title: 'Servicii Personalizate',
+                description: 'Fiecare client primește atenție individualizată'
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors"
+              >
+                <div className="w-12 h-12 bg-blue-primary/10 rounded-xl flex items-center justify-center text-blue-primary flex-shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <p className="font-semibold text-navy mb-1">{item.title}</p>
+                  <p className="text-gray-text text-sm">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
               <div className="pt-4">
                 <Button href="/despre-noi" size="lg">
@@ -479,9 +479,9 @@ const HomePage = () => {
                 <div className="text-4xl font-bold text-navy mb-2">
                   {stat.number}
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                <p className="text-xl font-heading font-semibold text-navy mb-2">
                   {stat.label}
-                </h3>
+                </p>
                 <p className="text-gray-text text-sm leading-relaxed">
                   {stat.description}
                 </p>
@@ -552,9 +552,9 @@ const HomePage = () => {
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-navy mb-3">
+                <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>
@@ -617,7 +617,7 @@ const HomePage = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                    <p className="font-semibold text-lg mb-1">{item.title}</p>
                     <p className="text-sm text-white/90">{item.description}</p>
                   </div>
                 </div>

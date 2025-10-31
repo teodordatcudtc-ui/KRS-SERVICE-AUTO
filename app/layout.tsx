@@ -13,8 +13,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Service auto București | KRS',
-  description: 'Reparații auto profesionale în București. Diagnoză, mecanică, electrică, vopsitorie și vulcanizare. Programează: 0769393545.',
+  title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
+  description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză computerizată, mecanică, electrică, vopsitorie și vulcanizare. Programează telefonic: 0769393545.',
   keywords: 'service auto bucuresti, reparații auto, vulcanizare, montaj anvelope, diagnoză auto, KRS SERVICE AUTO',
   authors: [{ name: 'KRS SERVICE AUTO' }],
   creator: 'KRS SERVICE AUTO',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     canonical: 'https://krs-service-auto.ro/',
   },
   openGraph: {
-    title: 'Service auto București | KRS',
-    description: 'Reparații auto profesionale în București. Diagnoză, mecanică și electrică. Programează: 0769393545.',
+    title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
+    description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză, mecanică, electrică și vopsitorie. Programează: 0769393545.',
     url: 'https://krs-service-auto.ro',
     siteName: 'KRS SERVICE AUTO',
     images: [
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Service auto București | KRS',
-    description: 'Reparații auto profesionale în București. Diagnoză, mecanică și electrică.',
+    title: 'Service Auto București - Reparații și Diagnoză | KRS SERVICE AUTO',
+    description: 'Service auto profesionist în București cu peste 20 de ani experiență. Oferim diagnoză, mecanică și electrică.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -76,6 +76,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

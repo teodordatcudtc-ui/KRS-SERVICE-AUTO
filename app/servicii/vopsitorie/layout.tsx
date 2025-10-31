@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Vopsitorie auto București | KRS',
-  description: 'Vopsitorie profesională în cabină, potrivire culoare computerizată. Finisaje premium. Programează: 0769393545.',
+  title: 'Vopsitorie Auto București - Vopsire în Cabină Profesională | KRS',
+  description: 'Vopsitorie auto profesională în București cu cabină de vopsit modernă. Potrivire culoare computerizată, polish, corecție lac și protecție ceramică. Finisaje premium. Programează: 0769393545.',
   alternates: { canonical: 'https://krs-service-auto.ro/servicii/vopsitorie' },
   openGraph: {
-    title: 'Vopsitorie auto București | KRS',
+    title: 'Vopsitorie Auto București - Vopsire în Cabină Profesională | KRS',
     description: 'Vopsire elemente, polish, corecție lac și protecție.',
     url: 'https://krs-service-auto.ro/servicii/vopsitorie'
   }

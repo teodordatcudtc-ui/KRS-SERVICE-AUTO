@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Încărcare freon AC București | KRS',
-  description: 'Încărcare și verificare climatizare auto: vidare, agent frigorific, test etanșeitate. Programează: 0769393545.',
+  title: 'Încărcare Freon AC București - Servicii Climatizare Auto | KRS SERVICE AUTO',
+  description: 'Încărcare și verificare completă sistem climatizare auto în București: vidare instalație, încărcare agent frigorific, test etanșeitate și performanță răcire. Programează: 0769393545.',
   alternates: { canonical: 'https://krs-service-auto.ro/servicii/incarcare-freon' },
   openGraph: {
-    title: 'Încărcare freon AC București | KRS',
+    title: 'Încărcare Freon AC București - Servicii Climatizare Auto | KRS SERVICE AUTO',
     description: 'Servicii complete pentru aer condiționat auto.',
     url: 'https://krs-service-auto.ro/servicii/incarcare-freon'
   }
