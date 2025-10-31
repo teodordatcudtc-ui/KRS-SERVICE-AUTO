@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -42,6 +43,43 @@ const services = [
 ]
 
 const HomePage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const touchStartX = useRef<number | null>(null)
+  const touchEndX = useRef<number | null>(null)
+
+  const stats = [
+    { number: '20+', label: 'Ani Experiență' },
+    { number: '1000+', label: 'Clienți Mulțumiți' },
+    { number: '5000+', label: 'Reparații' },
+    { number: '24/7', label: 'Suport' }
+  ]
+
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null
+    touchStartX.current = e.targetTouches[0].clientX
+  }
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return
+    
+    const distance = touchStartX.current - touchEndX.current
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe && currentIndex < stats.length - 1) {
+      setCurrentIndex(currentIndex + 1)
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    }
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -123,12 +161,12 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative lg:max-w-md"
             >
               {/* Hero Image */}
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center lg:aspect-square">
                     <div className="text-center">
                       <Icons.Car className="w-24 h-24 text-blue-primary mx-auto mb-4" />
                       <p className="text-gray-600">Imagine: Atelierul nostru modern</p>
@@ -160,14 +198,9 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* Stats Cards - Desktop Grid / Mobile Carousel */}
+              {/* Stats Cards - Desktop Grid */}
               <div className="hidden sm:grid grid-cols-2 gap-4 mt-8">
-                {[
-                  { number: '20+', label: 'Ani Experiență' },
-                  { number: '1000+', label: 'Clienți Mulțumiți' },
-                  { number: '5000+', label: 'Reparații' },
-                  { number: '24/7', label: 'Suport' }
-                ].map((stat, index) => (
+                {stats.map((stat, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -182,21 +215,47 @@ const HomePage = () => {
               </div>
 
               {/* Mobile Carousel */}
-              <div className="sm:hidden mt-8 overflow-hidden">
-                <div className="flex space-x-4">
-                  {[
-                    { number: '20+', label: 'Ani Experiență' },
-                    { number: '1000+', label: 'Clienți Mulțumiți' },
-                    { number: '5000+', label: 'Reparații' },
-                    { number: '24/7', label: 'Suport' }
-                  ].map((stat, index) => (
+              <div 
+                className="sm:hidden mt-8 overflow-hidden relative"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              >
+                <motion.div
+                  className="flex"
+                  animate={{
+                    x: `-${currentIndex * 100}%`
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30
+                  }}
+                >
+                  {stats.map((stat, index) => (
                     <div
                       key={index}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 flex-shrink-0 w-32"
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 flex-shrink-0 w-full"
                     >
-                      <div className="text-xl font-bold text-white">{stat.number}</div>
+                      <div className="text-2xl font-bold text-white">{stat.number}</div>
                       <div className="text-xs text-white/80">{stat.label}</div>
                     </div>
+                  ))}
+                </motion.div>
+
+                {/* Carousel Indicators */}
+                <div className="flex justify-center space-x-2 mt-4">
+                  {stats.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentIndex(index)}
+                      className={`h-2 rounded-full transition-all ${
+                        index === currentIndex 
+                          ? 'w-6 bg-white' 
+                          : 'w-2 bg-white/40'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
                   ))}
                 </div>
               </div>
