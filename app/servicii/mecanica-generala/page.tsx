@@ -7,57 +7,56 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-const serviceData = {
-  title: 'Mecanică Generală',
-  description: 'Reparații complete pentru toate sistemele mecanice ale vehiculului. De la motor și transmisie la frâne și suspensie, oferim servicii profesionale pentru toate mărcile de automobile.',
-  duration: '1-4 ore',
-  price: 'De la 100 lei',
-  icon: <Icons.Settings className="w-8 h-8" />,
-  features: [
-    'Reparații motor și transmisie',
-    'Servicii frâne și suspensie',
-    'Reparații sistem de răcire',
-    'Servicii sistem de încălzire',
-    'Reparații sistem de alimentare',
-    'Întreținere preventivă'
-  ],
-  process: [
-    {
-      step: '1',
-      title: 'Diagnosticare',
-      description: 'Identificăm problema prin verificare detaliată'
-    },
-    {
-      step: '2',
-      title: 'Planificare Reparație',
-      description: 'Stabilim planul de lucru și estimăm timpul'
-    },
-    {
-      step: '3',
-      title: 'Execuție Profesională',
-      description: 'Efectuăm reparația cu echipamente moderne'
-    },
-    {
-      step: '4',
-      title: 'Testare și Verificare',
-      description: 'Testăm vehiculul pentru a ne asigura că totul funcționează'
-    }
-  ],
-  benefits: [
-    'Siguranță sporită pe drum',
-    'Performanță optimă a vehiculului',
-    'Economie de combustibil',
-    'Prevenirea defecțiunilor majore'
-  ],
-  equipment: [
-    'Echipamente moderne de diagnosticare',
-    'Unelte profesionale pentru toate mărcile',
-    'Echipamente pentru testare performanță',
-    'Accesorii originale și de calitate'
-  ]
-}
-
 export default function MecanicaGeneralaPage() {
+  const serviceData = {
+    title: 'Mecanică Generală',
+    description: 'Reparații complete pentru toate sistemele mecanice ale vehiculului. De la motor și transmisie la frâne și suspensie, oferim servicii profesionale pentru toate mărcile de automobile.',
+    duration: '1-4 ore',
+    price: 'De la 100 lei',
+    features: [
+      'Reparații motor și transmisie',
+      'Servicii frâne și suspensie',
+      'Reparații sistem de răcire',
+      'Servicii sistem de încălzire',
+      'Reparații sistem de alimentare',
+      'Întreținere preventivă'
+    ],
+    process: [
+      {
+        step: '1',
+        title: 'Diagnosticare',
+        description: 'Identificăm problema prin verificare detaliată'
+      },
+      {
+        step: '2',
+        title: 'Planificare Reparație',
+        description: 'Stabilim planul de lucru și estimăm timpul'
+      },
+      {
+        step: '3',
+        title: 'Execuție Profesională',
+        description: 'Efectuăm reparația cu echipamente moderne'
+      },
+      {
+        step: '4',
+        title: 'Testare și Verificare',
+        description: 'Testăm vehiculul pentru a ne asigura că totul funcționează'
+      }
+    ],
+    benefits: [
+      'Siguranță sporită pe drum',
+      'Performanță optimă a vehiculului',
+      'Economie de combustibil',
+      'Prevenirea defecțiunilor majore'
+    ],
+    equipment: [
+      'Echipamente moderne de diagnosticare',
+      'Unelte profesionale pentru toate mărcile',
+      'Echipamente pentru testare performanță',
+      'Accesorii originale și de calitate'
+    ]
+  }
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -72,7 +71,7 @@ export default function MecanicaGeneralaPage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Settings className="w-8 h-8" />
                 <span>Serviciu Complex</span>
               </div>
 
@@ -202,7 +201,7 @@ export default function MecanicaGeneralaPage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Settings className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -210,7 +209,7 @@ export default function MecanicaGeneralaPage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>

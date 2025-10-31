@@ -12,7 +12,6 @@ const serviceData = {
   description: 'Reparații de anvelope și camere cu materiale de calitate superioară. Serviciul nostru de vulcanizare garantează siguranța ta pe drum prin reparații durabile și profesionale.',
   duration: '15-30 min',
   price: 'De la 25 lei',
-  icon: <Icons.Tire className="w-8 h-8" />,
   features: [
     'Reparație cameră de aer',
     'Reparație anvelopă (până la 6mm)',
@@ -72,7 +71,7 @@ export default function VulcanizarePage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Tire className="w-8 h-8" />
                 <span>Serviciu Rapid</span>
               </div>
 
@@ -202,7 +201,7 @@ export default function VulcanizarePage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Tire className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -210,7 +209,7 @@ export default function VulcanizarePage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>

@@ -6,41 +6,40 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-const serviceData = {
-  title: 'Tinichigerie Auto',
-  description: 'Îndreptare și reparații caroserie, înlocuire și aliniere elemente, pregătire pentru vopsire.',
-  duration: '1-5 zile',
-  price: 'Cotație la service',
-  icon: <Icons.Settings className="w-8 h-8" />,
-  features: [
-    'Îndreptare fără vopsire (PDR)',
-    'Reparații și înlocuiri aripi/uşi/capotă',
-    'Aliniere elemente caroserie',
-    'Dezolire și curățare rugină',
-    'Chituire și pregătire pentru vopsire',
-    'Garanție pentru lucrare'
-  ],
-  process: [
-    { step: '1', title: 'Evaluare', description: 'Evaluăm avariile și propunem soluția optimă' },
-    { step: '2', title: 'Demontare', description: 'Demontăm elementele afectate și pregătim intervenția' },
-    { step: '3', title: 'Reparație', description: 'Îndreptare/înlocuire și aliniere precisă a elementelor' },
-    { step: '4', title: 'Pregătire', description: 'Chituire, șlefuire și pregătire pentru vopsire' }
-  ],
-  benefits: [
-    'Aspect și geometrie corectă a caroseriei',
-    'Reducerea costurilor față de înlocuirea completă',
-    'Pregătire perfectă pentru vopsitorie',
-    'Garanție pentru lucrare'
-  ],
-  equipment: [
-    'Scule PDR și truse de îndreptat',
-    'Stand aliniere caroserie',
-    'Aparate de sudură și lipire',
-    'Echipamente profesionale de tinichigerie'
-  ]
-}
-
 export default function TinichigeriePage() {
+  const serviceData = {
+    title: 'Tinichigerie Auto',
+    description: 'Îndreptare și reparații caroserie, înlocuire și aliniere elemente, pregătire pentru vopsire.',
+    duration: '1-5 zile',
+    price: 'Cotație la service',
+    features: [
+      'Îndreptare fără vopsire (PDR)',
+      'Reparații și înlocuiri aripi/uşi/capotă',
+      'Aliniere elemente caroserie',
+      'Dezolire și curățare rugină',
+      'Chituire și pregătire pentru vopsire',
+      'Garanție pentru lucrare'
+    ],
+    process: [
+      { step: '1', title: 'Evaluare', description: 'Evaluăm avariile și propunem soluția optimă' },
+      { step: '2', title: 'Demontare', description: 'Demontăm elementele afectate și pregătim intervenția' },
+      { step: '3', title: 'Reparație', description: 'Îndreptare/înlocuire și aliniere precisă a elementelor' },
+      { step: '4', title: 'Pregătire', description: 'Chituire, șlefuire și pregătire pentru vopsire' }
+    ],
+    benefits: [
+      'Aspect și geometrie corectă a caroseriei',
+      'Reducerea costurilor față de înlocuirea completă',
+      'Pregătire perfectă pentru vopsitorie',
+      'Garanție pentru lucrare'
+    ],
+    equipment: [
+      'Scule PDR și truse de îndreptat',
+      'Stand aliniere caroserie',
+      'Aparate de sudură și lipire',
+      'Echipamente profesionale de tinichigerie'
+    ]
+  }
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -55,7 +54,7 @@ export default function TinichigeriePage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Settings className="w-8 h-8" />
                 <span>Serviciu Caroserie</span>
               </div>
 
@@ -185,7 +184,7 @@ export default function TinichigeriePage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Settings className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -193,7 +192,7 @@ export default function TinichigeriePage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>

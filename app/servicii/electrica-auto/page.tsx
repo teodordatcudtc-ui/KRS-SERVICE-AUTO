@@ -6,41 +6,40 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-const serviceData = {
-  title: 'Electrică Auto',
-  description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',
-  duration: '1-3 ore',
-  price: 'De la 150 lei',
-  icon: <Icons.Settings className="w-8 h-8" />,
-  features: [
-    'Diagnosticare erori electrice',
-    'Reparații alternator și demaror',
-    'Remediere probleme iluminare',
-    'Verificare și înlocuire senzori',
-    'Reparații instalație electrică',
-    'Diagnoză module electronice'
-  ],
-  process: [
-    { step: '1', title: 'Diagnoză', description: 'Scanare și verificare circuitelor electrice' },
-    { step: '2', title: 'Identificare', description: 'Localizăm componenta sau circuitul defect' },
-    { step: '3', title: 'Reparație', description: 'Intervenim cu înlocuire/reparare componente' },
-    { step: '4', title: 'Testare', description: 'Verificăm funcționarea corectă post-reparație' }
-  ],
-  benefits: [
-    'Sisteme electrice fiabile',
-    'Pornire sigură și încărcare corectă',
-    'Iluminare și siguranță optimă',
-    'Reducerea erorilor electronice'
-  ],
-  equipment: [
-    'Scanner OBD-II avansat',
-    'Multimetru și osciloscop',
-    'Testere senzori și module',
-    'Stand test alternator/demaror'
-  ]
-}
-
 export default function ElectricaAutoPage() {
+  const serviceData = {
+    title: 'Electrică Auto',
+    description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',
+    duration: '1-3 ore',
+    price: 'De la 150 lei',
+    features: [
+      'Diagnosticare erori electrice',
+      'Reparații alternator și demaror',
+      'Remediere probleme iluminare',
+      'Verificare și înlocuire senzori',
+      'Reparații instalație electrică',
+      'Diagnoză module electronice'
+    ],
+    process: [
+      { step: '1', title: 'Diagnoză', description: 'Scanare și verificare circuitelor electrice' },
+      { step: '2', title: 'Identificare', description: 'Localizăm componenta sau circuitul defect' },
+      { step: '3', title: 'Reparație', description: 'Intervenim cu înlocuire/reparare componente' },
+      { step: '4', title: 'Testare', description: 'Verificăm funcționarea corectă post-reparație' }
+    ],
+    benefits: [
+      'Sisteme electrice fiabile',
+      'Pornire sigură și încărcare corectă',
+      'Iluminare și siguranță optimă',
+      'Reducerea erorilor electronice'
+    ],
+    equipment: [
+      'Scanner OBD-II avansat',
+      'Multimetru și osciloscop',
+      'Testere senzori și module',
+      'Stand test alternator/demaror'
+    ]
+  }
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -55,7 +54,7 @@ export default function ElectricaAutoPage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Settings className="w-8 h-8" />
                 <span>Serviciu Electric</span>
               </div>
 
@@ -185,7 +184,7 @@ export default function ElectricaAutoPage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Settings className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -193,7 +192,7 @@ export default function ElectricaAutoPage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>

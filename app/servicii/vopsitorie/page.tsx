@@ -6,41 +6,40 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-const serviceData = {
-  title: 'Vopsitorie Auto',
-  description: 'Vopsitorie profesională în cabină, cu materiale premium și potrivire exactă a culorii.',
-  duration: '1-3 zile',
-  price: 'Cotație la service',
-  icon: <Icons.Car className="w-8 h-8" />,
-  features: [
-    'Vopsire elemente individuale',
-    'Polish și corecție lac',
-    'Îndepărtare zgârieturi',
-    'Potrivire culoare computerizată',
-    'Protecție ceramică la cerere',
-    'Garanție pentru lucrare'
-  ],
-  process: [
-    { step: '1', title: 'Evaluare', description: 'Evaluăm starea elementelor și stabilim lucrările' },
-    { step: '2', title: 'Pregătire', description: 'Șlefuire, chit, grund și mascare profesională' },
-    { step: '3', title: 'Vopsire', description: 'Aplicare strat bază și lac în cabină de vopsit' },
-    { step: '4', title: 'Finisare', description: 'Uscare, polish și control calitate' }
-  ],
-  benefits: [
-    'Aspect ca nou',
-    'Protecție pe termen lung',
-    'Potrivire perfectă a culorii',
-    'Garanție pentru lucrare'
-  ],
-  equipment: [
-    'Cabină de vopsit profesională',
-    'Sistem de colorimetrie computerizat',
-    'Pistoale de vopsit HVLP',
-    'Materiale premium pe bază de apă'
-  ]
-}
-
 export default function VopsitoriePage() {
+  const serviceData = {
+    title: 'Vopsitorie Auto',
+    description: 'Vopsitorie profesională în cabină, cu materiale premium și potrivire exactă a culorii.',
+    duration: '1-3 zile',
+    price: 'Cotație la service',
+    features: [
+      'Vopsire elemente individuale',
+      'Polish și corecție lac',
+      'Îndepărtare zgârieturi',
+      'Potrivire culoare computerizată',
+      'Protecție ceramică la cerere',
+      'Garanție pentru lucrare'
+    ],
+    process: [
+      { step: '1', title: 'Evaluare', description: 'Evaluăm starea elementelor și stabilim lucrările' },
+      { step: '2', title: 'Pregătire', description: 'Șlefuire, chit, grund și mascare profesională' },
+      { step: '3', title: 'Vopsire', description: 'Aplicare strat bază și lac în cabină de vopsit' },
+      { step: '4', title: 'Finisare', description: 'Uscare, polish și control calitate' }
+    ],
+    benefits: [
+      'Aspect ca nou',
+      'Protecție pe termen lung',
+      'Potrivire perfectă a culorii',
+      'Garanție pentru lucrare'
+    ],
+    equipment: [
+      'Cabină de vopsit profesională',
+      'Sistem de colorimetrie computerizat',
+      'Pistoale de vopsit HVLP',
+      'Materiale premium pe bază de apă'
+    ]
+  }
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -55,7 +54,7 @@ export default function VopsitoriePage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Car className="w-8 h-8" />
                 <span>Serviciu Caroserie</span>
               </div>
 
@@ -185,7 +184,7 @@ export default function VopsitoriePage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Car className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -193,7 +192,7 @@ export default function VopsitoriePage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>

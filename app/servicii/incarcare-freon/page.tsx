@@ -6,41 +6,40 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-const serviceData = {
-  title: 'Încărcare Freon (AC)',
-  description: 'Încărcare și verificare completă a sistemului de climatizare, cu test de etanșeitate și performanță.',
-  duration: '30-60 min',
-  price: 'De la 200 lei',
-  icon: <Icons.Settings className="w-8 h-8" />,
-  features: [
-    'Verificare vizuală și test etanșeitate',
-    'Vidare instalație și încărcare agent frigorific',
-    'Completare ulei compresor și trasare UV',
-    'Măsurare presiuni și temperaturi de lucru',
-    'Testare performanță răcire în habitaclu',
-    'Tratare mirosuri (opțional)'
-  ],
-  process: [
-    { step: '1', title: 'Inspecție', description: 'Verificăm vizual circuitul și eventuale pierderi' },
-    { step: '2', title: 'Vidare', description: 'Vidăm instalația pentru a elimina umezeala' },
-    { step: '3', title: 'Încărcare', description: 'Încărcăm cu cantitatea corectă de agent frigorific' },
-    { step: '4', title: 'Testare', description: 'Verificăm presiunile și performanța de răcire' }
-  ],
-  benefits: [
-    'Răcire rapidă și eficientă',
-    'Protecția compresorului și a instalației',
-    'Consum redus de combustibil',
-    'Confort îmbunătățit în trafic'
-  ],
-  equipment: [
-    'Stație automată încărcare freon',
-    'Detector pierderi cu UV',
-    'Manometre profesionale AC',
-    'Termometru digital pentru habitaclu'
-  ]
-}
-
 export default function IncarcareFreonPage() {
+  const serviceData = {
+    title: 'Încărcare Freon (AC)',
+    description: 'Încărcare și verificare completă a sistemului de climatizare, cu test de etanșeitate și performanță.',
+    duration: '30-60 min',
+    price: 'De la 200 lei',
+    features: [
+      'Verificare vizuală și test etanșeitate',
+      'Vidare instalație și încărcare agent frigorific',
+      'Completare ulei compresor și trasare UV',
+      'Măsurare presiuni și temperaturi de lucru',
+      'Testare performanță răcire în habitaclu',
+      'Tratare mirosuri (opțional)'
+    ],
+    process: [
+      { step: '1', title: 'Inspecție', description: 'Verificăm vizual circuitul și eventuale pierderi' },
+      { step: '2', title: 'Vidare', description: 'Vidăm instalația pentru a elimina umezeala' },
+      { step: '3', title: 'Încărcare', description: 'Încărcăm cu cantitatea corectă de agent frigorific' },
+      { step: '4', title: 'Testare', description: 'Verificăm presiunile și performanța de răcire' }
+    ],
+    benefits: [
+      'Răcire rapidă și eficientă',
+      'Protecția compresorului și a instalației',
+      'Consum redus de combustibil',
+      'Confort îmbunătățit în trafic'
+    ],
+    equipment: [
+      'Stație automată încărcare freon',
+      'Detector pierderi cu UV',
+      'Manometre profesionale AC',
+      'Termometru digital pentru habitaclu'
+    ]
+  }
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -55,7 +54,7 @@ export default function IncarcareFreonPage() {
               className="text-center lg:text-left space-y-6"
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
-                {serviceData.icon}
+                <Icons.Settings className="w-8 h-8" />
                 <span>Serviciu Climatizare</span>
               </div>
 
@@ -185,7 +184,7 @@ export default function IncarcareFreonPage() {
               >
                 <div className="relative mb-6">
                   <div className="w-20 h-20 bg-blue-primary/10 rounded-full flex items-center justify-center text-blue-primary mx-auto mb-4 group-hover:bg-blue-primary group-hover:text-white transition-all duration-300">
-                    {serviceData.icon}
+                    <Icons.Settings className="w-8 h-8" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
@@ -193,7 +192,7 @@ export default function IncarcareFreonPage() {
                 </div>
                 <p className="text-xl font-heading font-semibold text-navy mb-3">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-gray-text leading-relaxed">
                   {item.description}
                 </p>
