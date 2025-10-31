@@ -93,7 +93,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
               >
-                KRS SERVICE AUTO – Service auto profesionist în București
+                KRS SERVICE AUTO
               </motion.h1>
               
               {/* Mobile-only subtitle */}
