@@ -7,16 +7,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Diagnoză auto București | KRS SERVICE AUTO',
-  description: 'Diagnosticare computerizată completă cu echipamente moderne. Identificare precisă a problemelor. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/diagnoza-auto' },
-  openGraph: {
-    title: 'Diagnoză auto București | KRS SERVICE AUTO',
-    description: 'Diagnosticare completă cu echipamente moderne în București.',
-    url: 'https://krs-service-auto.ro/servicii/diagnoza-auto'
-  }
-}
 const serviceData = {
   title: 'Diagnoză Auto',
   description: 'Diagnosticare completă cu echipamente moderne pentru identificarea precisă a problemelor. Folosim cele mai noi tehnologii pentru a detecta orice defecțiune înainte ca aceasta să devină o problemă majoră.',

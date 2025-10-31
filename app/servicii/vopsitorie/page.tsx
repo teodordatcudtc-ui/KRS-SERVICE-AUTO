@@ -6,16 +6,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Vopsitorie auto București | KRS SERVICE AUTO',
-  description: 'Vopsitorie profesională în cabină, potrivire culoare computerizată, finisaje premium. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/vopsitorie' },
-  openGraph: {
-    title: 'Vopsitorie auto București | KRS SERVICE AUTO',
-    description: 'Vopsire elemente, polish, corecție lac și protecție.',
-    url: 'https://krs-service-auto.ro/servicii/vopsitorie'
-  }
-}
 const serviceData = {
   title: 'Vopsitorie Auto',
   description: 'Vopsitorie profesională în cabină, cu materiale premium și potrivire exactă a culorii.',

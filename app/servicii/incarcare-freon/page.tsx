@@ -6,16 +6,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Încărcare freon AC București | KRS SERVICE AUTO',
-  description: 'Încărcare și verificare sistem climatizare auto: vidare, agent frigorific, test etanșeitate și performanță. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/incarcare-freon' },
-  openGraph: {
-    title: 'Încărcare freon AC București | KRS SERVICE AUTO',
-    description: 'Servicii complete pentru aer condiționat auto.',
-    url: 'https://krs-service-auto.ro/servicii/incarcare-freon'
-  }
-}
 const serviceData = {
   title: 'Încărcare Freon (AC)',
   description: 'Încărcare și verificare completă a sistemului de climatizare, cu test de etanșeitate și performanță.',

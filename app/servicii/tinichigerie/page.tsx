@@ -6,16 +6,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Tinichigerie auto București | KRS SERVICE AUTO',
-  description: 'Îndreptare caroserie, înlocuire și aliniere elemente, pregătire pentru vopsire. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/tinichigerie' },
-  openGraph: {
-    title: 'Tinichigerie auto București | KRS SERVICE AUTO',
-    description: 'Reparații precise și durabile pentru caroserie.',
-    url: 'https://krs-service-auto.ro/servicii/tinichigerie'
-  }
-}
 const serviceData = {
   title: 'Tinichigerie Auto',
   description: 'Îndreptare și reparații caroserie, înlocuire și aliniere elemente, pregătire pentru vopsire.',

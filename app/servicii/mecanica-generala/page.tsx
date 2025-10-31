@@ -7,16 +7,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Mecanică generală București | KRS SERVICE AUTO',
-  description: 'Reparații complete motor, frâne, suspensie și transmisie. Servicii mecanice profesionale în București. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/mecanica-generala' },
-  openGraph: {
-    title: 'Mecanică generală București | KRS SERVICE AUTO',
-    description: 'Reparații mecanice profesionale pentru toate mărcile.',
-    url: 'https://krs-service-auto.ro/servicii/mecanica-generala'
-  }
-}
 const serviceData = {
   title: 'Mecanică Generală',
   description: 'Reparații complete pentru toate sistemele mecanice ale vehiculului. De la motor și transmisie la frâne și suspensie, oferim servicii profesionale pentru toate mărcile de automobile.',

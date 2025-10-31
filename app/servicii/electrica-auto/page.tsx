@@ -6,16 +6,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Electrică auto București | KRS SERVICE AUTO',
-  description: 'Diagnosticare și reparații pentru sistemele electrice și electronice. Alternator, demaror, senzori, module. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/electrica-auto' },
-  openGraph: {
-    title: 'Electrică auto București | KRS SERVICE AUTO',
-    description: 'Diagnoză și intervenții electrice profesionale.',
-    url: 'https://krs-service-auto.ro/servicii/electrica-auto'
-  }
-}
 const serviceData = {
   title: 'Electrică Auto',
   description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',

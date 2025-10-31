@@ -7,16 +7,6 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export const metadata = {
-  title: 'Vulcanizare București | KRS SERVICE AUTO',
-  description: 'Reparații anvelope, montaj/demontaj și echilibrare roți. Servicii rapide de vulcanizare în București. Programează: 0769393545.',
-  alternates: { canonical: 'https://krs-service-auto.ro/servicii/vulcanizare' },
-  openGraph: {
-    title: 'Vulcanizare București | KRS SERVICE AUTO',
-    description: 'Servicii complete de vulcanizare și întreținere anvelope.',
-    url: 'https://krs-service-auto.ro/servicii/vulcanizare'
-  }
-}
 const serviceData = {
   title: 'Vulcanizare',
   description: 'Reparații de anvelope și camere cu materiale de calitate superioară. Serviciul nostru de vulcanizare garantează siguranța ta pe drum prin reparații durabile și profesionale.',
