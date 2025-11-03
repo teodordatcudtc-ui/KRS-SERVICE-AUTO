@@ -47,7 +47,7 @@ const services = [
     title: 'Vulcanizare',
     description: 'Reparații de anvelope și camere cu materiale de calitate superioară.',
     duration: '15-30 min',
-    price: 'De la 25 lei',
+    price: 'De la 50 lei',
     features: ['Reparație cameră', 'Reparație anvelopă', 'Montaj/Demontaj'],
     href: '/servicii/vulcanizare'
   },
@@ -56,7 +56,7 @@ const services = [
     title: 'Mecanică Generală',
     description: 'Reparații complete la motor, transmisie, frâne și alte componente importante.',
     duration: '1-4 ore',
-    price: 'De la 100 lei',
+    price: '150 lei/oră',
     features: ['Reparații motor', 'Servisare frâne', 'Reparații transmisie'],
     href: '/servicii/mecanica-generala'
   },

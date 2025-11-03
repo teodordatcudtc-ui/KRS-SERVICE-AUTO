@@ -7,53 +7,53 @@ import Button from '@/components/Button'
 import AnimatedCard from '@/components/AnimatedCard'
 import { Icons } from '@/components/IconSet'
 
-export default function MecanicaGeneralaPage() {
+export default function ReviziePage() {
   const serviceData = {
-    title: 'Mecanică Generală',
-    description: 'Reparații complete pentru toate sistemele mecanice ale vehiculului. De la motor și transmisie la frâne și suspensie, oferim servicii profesionale pentru toate mărcile de automobile.',
-    duration: '1-4 ore',
-    price: '150 lei/oră',
+    title: 'Revizie',
+    description: 'Revizie completă și întreținere preventivă pentru vehiculul tău. Asigurăm funcționarea optimă și durabilitatea tuturor sistemelor prin verificări periodice profesionale.',
+    duration: '1-2 ore',
+    price: 'De la 100 lei',
     features: [
-      'Reparații motor și transmisie',
-      'Servicii frâne și suspensie',
-      'Reparații sistem de răcire',
-      'Servicii sistem de încălzire',
-      'Reparații sistem de alimentare',
-      'Întreținere preventivă'
+      'Schimb ulei motor și filtru ulei',
+      'Verificare și înlocuire filtru aer',
+      'Verificare filtru habitaclu',
+      'Control nivele lichide (răcire, frână)',
+      'Verificare sistem frânare',
+      'Inspecție generală vehicul'
     ],
     process: [
       {
         step: '1',
-        title: 'Diagnosticare',
-        description: 'Identificăm problema prin verificare detaliată'
+        title: 'Verificare Inițială',
+        description: 'Efectuăm o verificare completă a stării generale a vehiculului'
       },
       {
         step: '2',
-        title: 'Planificare Reparație',
-        description: 'Stabilim planul de lucru și estimăm timpul'
+        title: 'Schimb Ulei și Filtre',
+        description: 'Înlocuim uleiul motor și filtrele conform specificațiilor'
       },
       {
         step: '3',
-        title: 'Execuție Profesională',
-        description: 'Efectuăm reparația cu echipamente moderne'
+        title: 'Control Sisteme',
+        description: 'Verificăm și completăm nivelele de lichide și sistemele principale'
       },
       {
         step: '4',
-        title: 'Testare și Verificare',
-        description: 'Testăm vehiculul pentru a ne asigura că totul funcționează'
+        title: 'Raport Final',
+        description: 'Îți prezentăm un raport detaliat cu starea vehiculului și recomandările noastre'
       }
     ],
     benefits: [
-      'Siguranță sporită pe drum',
-      'Performanță optimă a vehiculului',
-      'Economie de combustibil',
-      'Prevenirea defecțiunilor majore'
+      'Prevenirea defecțiunilor majore',
+      'Prelungirea duratei de viață a motorului',
+      'Performanță optimă și consum redus',
+      'Siguranță sporită pe drum'
     ],
     equipment: [
-      'Echipamente moderne de diagnosticare',
-      'Unelte profesionale pentru toate mărcile',
-      'Echipamente pentru testare performanță',
-      'Accesorii originale și de calitate'
+      'Echipamente moderne de întreținere',
+      'Uleiuri și filtre de calitate superioară',
+      'Instrumente profesionale de verificare',
+      'Accesorii originale și compatibile'
     ]
   }
 
@@ -72,7 +72,7 @@ export default function MecanicaGeneralaPage() {
             >
               <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-4">
                 <Icons.Settings className="w-8 h-8" />
-                <span>Serviciu Complex</span>
+                <span>Serviciu Întreținere</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight">
@@ -122,14 +122,11 @@ export default function MecanicaGeneralaPage() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/images/services/mecanica-generala.jpg"
-                    alt="Atelier mecanică - KRS SERVICE AUTO"
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
+                <div className="aspect-[4/3] bg-gradient-to-br from-blue-primary/20 to-blue-accent/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <Icons.Settings className="w-24 h-24 text-blue-primary mx-auto mb-4" />
+                    <p className="text-gray-600">Revizie auto profesională</p>
+                  </div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </div>
@@ -149,10 +146,10 @@ export default function MecanicaGeneralaPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Ce Include Serviciul
+              Ce Include Revizia
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              Servicii complete de mecanică pentru toate sistemele vehiculului
+              Servicii complete de întreținere preventivă pentru vehiculul tău
             </p>
           </motion.div>
 
@@ -187,7 +184,7 @@ export default function MecanicaGeneralaPage() {
               Cum Funcționează
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              Procesul nostru de reparație pas cu pas
+              Procesul nostru de revizie pas cu pas
             </p>
           </motion.div>
 
@@ -235,10 +232,10 @@ export default function MecanicaGeneralaPage() {
             >
               <div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-                  Beneficiile Mecanicii Profesionale
+                  Beneficiile Reviziei Periodice
                 </h2>
                 <p className="text-lg text-gray-text leading-relaxed">
-                  O reparație profesională îți oferă multiple avantaje pentru vehiculul tău.
+                  O revizie regulată îți oferă multiple avantaje pentru vehiculul tău și siguranța ta pe drum.
                 </p>
               </div>
 
@@ -275,7 +272,7 @@ export default function MecanicaGeneralaPage() {
                 <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
                   <div className="text-center">
                     <Icons.CheckCircle className="w-24 h-24 text-green-600 mx-auto mb-4" />
-                    <p className="text-gray-600">Beneficii pentru performanță</p>
+                    <p className="text-gray-600">Beneficii pentru durabilitate</p>
                   </div>
                 </div>
               </div>
@@ -295,10 +292,10 @@ export default function MecanicaGeneralaPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Echipamentele Noastre
+              Materiale și Echipamente
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              Folosim doar echipamente de cea mai înaltă calitate pentru reparații
+              Folosim doar materiale și echipamente de cea mai înaltă calitate pentru revizie
             </p>
           </motion.div>
 
@@ -330,10 +327,10 @@ export default function MecanicaGeneralaPage() {
             className="space-y-8"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
-              Ai Nevoie de Reparații Mecanice?
+              Ai Nevoie de O Revizie?
             </h2>
             <p className="text-xl text-blue-accent max-w-2xl mx-auto">
-              Contactează-ne acum pentru o reparație profesională și durabilă!
+              Contactează-ne acum pentru o revizie completă și întreținere preventivă!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -350,7 +347,7 @@ export default function MecanicaGeneralaPage() {
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-navy"
               >
-                Programează-te
+                Programează revizie
               </Button>
             </div>
           </motion.div>

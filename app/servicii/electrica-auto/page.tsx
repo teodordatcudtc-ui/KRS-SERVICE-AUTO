@@ -12,7 +12,7 @@ export default function ElectricaAutoPage() {
     title: 'Electrică Auto',
     description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',
     duration: '1-3 ore',
-    price: 'De la 150 lei',
+    price: 'Cotație la service',
     features: [
       'Diagnosticare erori electrice',
       'Reparații alternator și demaror',

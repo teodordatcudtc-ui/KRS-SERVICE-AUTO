@@ -5,30 +5,6 @@ import Image from 'next/image'
 import Button from '@/components/Button'
 import { Icons } from '@/components/IconSet'
 
-const teamMembers = [
-  {
-    name: 'Cristian Popescu',
-    role: 'Manager & Mecanic Șef',
-    experience: '15 ani experiență',
-    description: 'Specialist în reparații motor și transmisie, cu certificări internaționale.',
-    icon: Icons.Award
-  },
-  {
-    name: 'Alexandru Ionescu',
-    role: 'Mecanic Senior',
-    experience: '12 ani experiență',
-    description: 'Expert în sistemul de frânare și suspensie, cu atenție la detalii.',
-    icon: Icons.Wrench
-  },
-  {
-    name: 'Mihai Dumitrescu',
-    role: 'Specialist Anvelope',
-    experience: '8 ani experiență',
-    description: 'Specialist în vulcanizare și montaj anvelope, cu echipamente moderne.',
-    icon: Icons.Tire
-  }
-]
-
 const values = [
   {
     icon: <Icons.Shield className="w-8 h-8" />,
@@ -190,7 +166,8 @@ export default function DespreNoiPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      Serviciile Noastre
+          {/* Why Choose Us Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -201,42 +178,145 @@ export default function DespreNoiPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Echipa Noastră
+              De Ce Să Ne Alegi
             </h2>
             <p className="text-lg text-gray-text max-w-2xl mx-auto">
-              Mecanici calificați și experimentați, dedicați să-ți ofere cel mai bun serviciu
+              Avantajele care fac diferența în serviciile noastre de service auto
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 1, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card text-center group hover:shadow-2xl"
-              >
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-blue-primary/10 flex items-center justify-center">
-                    <member.icon className="w-16 h-16 text-blue-primary" />
-                  </div>
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0">
+                  <Icons.CheckCircle className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-navy mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-blue-primary font-medium mb-2">
-                  {member.role}
-                </p>
-                <p className="text-sm text-gray-600 mb-4">
-                  {member.experience}
-                </p>
-                <p className="text-gray-text text-sm leading-relaxed">
-                  {member.description}
-                </p>
-              </motion.div>
-            ))}
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Garanție pentru Toate Lucrările
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Oferim garanție pentru toate reparațiile efectuate, asigurându-te că lucrarea este de calitate și durabilă.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                  <Icons.Settings className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Echipamente Moderne
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Folosim cele mai noi tehnologii de diagnosticare și reparații pentru rezultate precise și eficiente.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 flex-shrink-0">
+                  <Icons.Shield className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Transparență Totală
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Îți explicăm în detaliu ce trebuie reparat și de ce, cu devize clare înainte de orice intervenție.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 flex-shrink-0">
+                  <Icons.Clock className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Programare Rapidă
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Te programăm rapid și respectăm termenele convenite, minimizând timpul de nefuncționare a vehiculului.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 flex-shrink-0">
+                  <Icons.Wrench className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Piese de Calitate
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Folosim doar piese originale sau echivalente de calitate superioară, cu certificare și garanție.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="card p-6"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 flex-shrink-0">
+                  <Icons.Star className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-semibold text-navy mb-2">
+                    Prețuri Corecte
+                  </h3>
+                  <p className="text-gray-text leading-relaxed">
+                    Oferim prețuri competitive și transparente, fără surprize, cu devize detaliate înainte de lucrare.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -11,7 +11,7 @@ const serviceData = {
   title: 'Vulcanizare',
   description: 'Reparații de anvelope și camere cu materiale de calitate superioară. Serviciul nostru de vulcanizare garantează siguranța ta pe drum prin reparații durabile și profesionale.',
   duration: '15-30 min',
-  price: 'De la 25 lei',
+  price: 'De la 50 lei',
   features: [
     'Reparație cameră de aer',
     'Reparație anvelopă (până la 6mm)',

@@ -30,7 +30,7 @@ const allServices = [
     title: 'Vulcanizare',
     description: 'Reparații de anvelope și camere cu materiale de calitate superioară. Serviciul nostru de vulcanizare garantează siguranța ta pe drum prin reparații durabile și profesionale.',
     duration: '15-30 min',
-    price: 'De la 25 lei',
+    price: 'De la 50 lei',
     features: [
       'Reparație cameră de aer',
       'Reparație anvelopă (până la 6mm)',
@@ -47,7 +47,7 @@ const allServices = [
     title: 'Mecanică Generală',
     description: 'Reparații complete la motor, transmisie, frâne și alte componente importante. Echipa noastră de mecanici calificați rezolvă orice problemă mecanică cu profesionalism și atenție la detalii.',
     duration: '1-4 ore',
-    price: 'De la 100 lei',
+    price: '150 lei/oră',
     features: [
       'Reparații motor și transmisie',
       'Servisare sistem de frânare',
@@ -98,7 +98,7 @@ const allServices = [
     title: 'Electrică Auto',
     description: 'Diagnosticare și reparații pentru sistemele electrice și electronice ale vehiculului.',
     duration: '1-3 ore',
-    price: 'De la 150 lei',
+    price: 'Cotație la service',
     features: [
       'Diagnosticare erori electrice',
       'Reparații alternator și demaror',
@@ -115,7 +115,7 @@ const allServices = [
     title: 'Încărcare Freon (AC)',
     description: 'Încărcare și verificare sistem climatizare cu freon conform specificațiilor producătorului.',
     duration: '30-60 min',
-    price: 'De la 200 lei',
+    price: 'Cotație la service',
     features: [
       'Verificare pierderi și presiuni',
       'Vidare și încărcare agent frigorific',
@@ -126,6 +126,23 @@ const allServices = [
     ],
     category: 'intretinere',
     href: '/servicii/incarcare-freon'
+  },
+  {
+    icon: <Icons.Settings className="w-6 h-6" />,
+    title: 'Revizie',
+    description: 'Revizie completă și întreținere preventivă pentru vehiculul tău. Asigurăm funcționarea optimă și durabilitatea tuturor sistemelor.',
+    duration: '1-2 ore',
+    price: 'De la 100 lei',
+    features: [
+      'Schimb ulei motor și filtru ulei',
+      'Verificare și înlocuire filtru aer',
+      'Verificare filtru habitaclu',
+      'Control nivele lichide (răcire, frână)',
+      'Verificare sistem frânare',
+      'Inspecție generală vehicul'
+    ],
+    category: 'intretinere',
+    href: '/servicii/revizie'
   }
 ]
 

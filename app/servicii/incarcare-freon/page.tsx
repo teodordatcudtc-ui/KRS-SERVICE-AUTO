@@ -12,7 +12,7 @@ export default function IncarcareFreonPage() {
     title: 'Încărcare Freon (AC)',
     description: 'Încărcare și verificare completă a sistemului de climatizare, cu test de etanșeitate și performanță.',
     duration: '30-60 min',
-    price: 'De la 200 lei',
+    price: 'Cotație la service',
     features: [
       'Verificare vizuală și test etanșeitate',
       'Vidare instalație și încărcare agent frigorific',
