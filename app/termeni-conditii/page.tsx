@@ -179,7 +179,7 @@ export default function TermeniConditiiPage() {
                     <strong>KRS SERVICE AUTO</strong><br />
                     <strong>Adresă:</strong> Strada Toporași 69, București 052034<br />
                     <strong>Telefon:</strong> 0769393545<br />
-                    <strong>Email:</strong> contact@krs-service-auto.ro
+                    <strong>Email:</strong> serviceautotoporasi69@gmail.com
                   </p>
                 </div>
               </div>

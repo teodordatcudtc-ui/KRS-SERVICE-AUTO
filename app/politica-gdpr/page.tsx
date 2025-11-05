@@ -44,7 +44,7 @@ export default function PoliticaGDPRPage() {
                   <strong>KRS SERVICE AUTO</strong><br />
                   Adresă: Strada Toporași 69, București 052034<br />
                   Telefon: 0769393545<br />
-                  Email: contact@krs-service-auto.ro
+                  Email: serviceautotoporasi69@gmail.com
                 </p>
               </div>
 
@@ -139,7 +139,7 @@ export default function PoliticaGDPRPage() {
                 </p>
                 <div className="mt-4 p-4 bg-gray-50 rounded-lg">
                   <p className="text-gray-text">
-                    <strong>Email:</strong> contact@krs-service-auto.ro<br />
+                    <strong>Email:</strong> serviceautotoporasi69@gmail.com<br />
                     <strong>Telefon:</strong> 0769393545<br />
                     <strong>Adresă:</strong> Strada Toporași 69, București 052034
                   </p>
