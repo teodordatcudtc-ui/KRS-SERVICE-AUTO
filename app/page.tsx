@@ -169,7 +169,7 @@ const HomePage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="text-4xl font-heading font-bold text-white leading-tight"
                 >
-                  Service auto profesionist<br />în București
+                  Service auto<br />profesionist în București
                 </motion.h1>
                 
                 <motion.div
