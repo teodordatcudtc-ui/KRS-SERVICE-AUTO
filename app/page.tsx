@@ -123,7 +123,7 @@ const HomePage = () => {
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-black/85" />
         </div>
         
         {/* Desktop Animated Background */}
@@ -132,54 +132,6 @@ const HomePage = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* Mobile Stats Carousel - mutat sus */}
-          <div className="sm:hidden mb-6">
-            <div 
-              className="overflow-hidden relative"
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-            >
-              <motion.div
-                className="flex"
-                animate={{
-                  x: `-${currentIndex * 100}%`
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30
-                }}
-              >
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white/20 backdrop-blur-md rounded-xl p-4 text-center border border-white/30 flex-shrink-0 w-full"
-                  >
-                    <div className="text-3xl font-bold text-white">{stat.number}</div>
-                    <div className="text-sm text-white/90 font-medium">{stat.label}</div>
-                  </div>
-                ))}
-              </motion.div>
-
-              {/* Carousel Indicators */}
-              <div className="flex justify-center space-x-2 mt-4">
-                {stats.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentIndex 
-                        ? 'w-6 bg-white' 
-                        : 'w-2 bg-white/40'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Column - Text Content */}
             <motion.div
@@ -199,24 +151,53 @@ const HomePage = () => {
                 <span>5+ ani experiență • 1000+ clienți mulțumiți</span>
               </motion.div>
 
+              {/* Mobile - Enhanced Title Section */}
+              <div className="sm:hidden space-y-4">
+                <motion.div
+                  initial={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-primary/20 to-blue-accent/20 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 mb-3"
+                >
+                  <Icons.Award className="w-4 h-4 text-yellow-400" />
+                  <span className="text-white/90 text-xs font-medium">Service Certificat</span>
+                </motion.div>
+                
+                <motion.h1
+                  initial={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="text-4xl font-heading font-bold text-white leading-tight"
+                >
+                  Service auto profesionist în București
+                </motion.h1>
+                
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                  className="flex flex-wrap items-center justify-center gap-3"
+                >
+                  <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
+                    <Icons.Clock className="w-4 h-4 text-green-400" />
+                    <span className="text-white font-medium text-sm">Reparații rapide</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
+                    <Icons.Shield className="w-4 h-4 text-blue-accent" />
+                    <span className="text-white font-medium text-sm">Calitate garantată</span>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Desktop Title */}
               <motion.h1
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
+                className="hidden sm:block text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight"
               >
                 Service auto profesionist în București
               </motion.h1>
-              
-              {/* Mobile-only subtitle */}
-              <motion.p
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="sm:hidden text-lg text-white font-medium"
-              >
-                Reparații rapide • Calitate garantată
-              </motion.p>
               
               <motion.p
                 initial={{ opacity: 1 }}
@@ -245,6 +226,54 @@ const HomePage = () => {
                 >
                   Vezi servicii
                 </Button>
+              </div>
+
+              {/* Mobile Stats Carousel - sub butoane */}
+              <div className="sm:hidden mt-6">
+                <div 
+                  className="overflow-hidden relative"
+                  onTouchStart={onTouchStart}
+                  onTouchMove={onTouchMove}
+                  onTouchEnd={onTouchEnd}
+                >
+                  <motion.div
+                    className="flex"
+                    animate={{
+                      x: `-${currentIndex * 100}%`
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30
+                    }}
+                  >
+                    {stats.map((stat, index) => (
+                      <div
+                        key={index}
+                        className="bg-white/20 backdrop-blur-md rounded-xl p-5 text-center border border-white/30 flex-shrink-0 w-full shadow-lg"
+                      >
+                        <div className="text-4xl font-bold text-white mb-1">{stat.number}</div>
+                        <div className="text-sm text-white/90 font-medium">{stat.label}</div>
+                      </div>
+                    ))}
+                  </motion.div>
+
+                  {/* Carousel Indicators */}
+                  <div className="flex justify-center space-x-2 mt-4">
+                    {stats.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className={`h-2 rounded-full transition-all ${
+                          index === currentIndex 
+                            ? 'w-6 bg-white' 
+                            : 'w-2 bg-white/40'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
 
