@@ -169,7 +169,7 @@ const HomePage = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="text-4xl font-heading font-bold text-white leading-tight"
                 >
-                  Service auto profesionist în București
+                  Service auto profesionist<br />în București
                 </motion.h1>
                 
                 <motion.div
@@ -222,7 +222,7 @@ const HomePage = () => {
                   href="/servicii" 
                   variant="outline" 
                   size="lg"
-                  className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-navy"
+                  className="text-lg px-8 py-4 !border-2 !border-white !text-white hover:!bg-white hover:!text-navy focus:!bg-white focus:!text-navy focus-visible:!bg-white focus-visible:!text-navy active:!bg-white active:!text-navy visited:!border-white visited:!text-white"
                 >
                   Vezi servicii
                 </Button>
