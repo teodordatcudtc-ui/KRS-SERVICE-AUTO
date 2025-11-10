@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -76,6 +76,15 @@ const HomePage = () => {
 
   const minSwipeDistance = 50
 
+  // Auto-play pentru carusel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % stats.length)
+    }, 3000) // Schimbă la fiecare 3 secunde
+
+    return () => clearInterval(interval)
+  }, [stats.length])
+
   const onTouchStart = (e: React.TouchEvent) => {
     touchEndX.current = null
     touchStartX.current = e.targetTouches[0].clientX
@@ -103,11 +112,74 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center gradient-hero overflow-hidden py-8 pt-32 sm:pt-36">
-        {/* Animated Background */}
-        <AnimatedBackground />
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden py-8 pt-32 sm:pt-36 sm:gradient-hero">
+        {/* Mobile Background Image - doar pe telefon */}
+        <div className="sm:hidden absolute inset-0 z-0">
+          <Image
+            src="/images/hero/hero-main.jpg"
+            alt="Atelierul nostru modern - KRS SERVICE AUTO"
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy/80" />
+        </div>
+        
+        {/* Desktop Animated Background */}
+        <div className="hidden sm:block">
+          <AnimatedBackground />
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          {/* Mobile Stats Carousel - mutat sus */}
+          <div className="sm:hidden mb-6">
+            <div 
+              className="overflow-hidden relative"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              <motion.div
+                className="flex"
+                animate={{
+                  x: `-${currentIndex * 100}%`
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
+              >
+                {stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/20 backdrop-blur-md rounded-xl p-4 text-center border border-white/30 flex-shrink-0 w-full"
+                  >
+                    <div className="text-3xl font-bold text-white">{stat.number}</div>
+                    <div className="text-sm text-white/90 font-medium">{stat.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center space-x-2 mt-4">
+                {stats.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex 
+                        ? 'w-6 bg-white' 
+                        : 'w-2 bg-white/40'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Column - Text Content */}
             <motion.div
@@ -166,22 +238,22 @@ const HomePage = () => {
                   Sună acum: 0769393545
                 </Button>
                 <Button 
-                  href="/contact" 
+                  href="/servicii" 
                   variant="outline" 
                   size="lg"
                   className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-navy"
                 >
-                  Rezervă online
+                  Vezi servicii
                 </Button>
               </div>
             </motion.div>
 
-            {/* Right Column - Hero Image */}
+            {/* Right Column - Hero Image - ascuns pe mobile */}
             <motion.div
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative lg:max-w-2xl z-20"
+              className="hidden sm:block relative lg:max-w-2xl z-20"
             >
               {/* Hero Image */}
               <div className="relative">
@@ -237,51 +309,6 @@ const HomePage = () => {
                 ))}
               </div>
 
-              {/* Mobile Carousel */}
-              <div 
-                className="sm:hidden mt-8 overflow-hidden relative"
-                onTouchStart={onTouchStart}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
-              >
-                <motion.div
-                  className="flex"
-                  animate={{
-                    x: `-${currentIndex * 100}%`
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30
-                  }}
-                >
-                  {stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 flex-shrink-0 w-full"
-                    >
-                      <div className="text-2xl font-bold text-white">{stat.number}</div>
-                      <div className="text-xs text-white/80">{stat.label}</div>
-                    </div>
-                  ))}
-                </motion.div>
-
-                {/* Carousel Indicators */}
-                <div className="flex justify-center space-x-2 mt-4">
-                  {stats.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentIndex(index)}
-                      className={`h-2 rounded-full transition-all ${
-                        index === currentIndex 
-                          ? 'w-6 bg-white' 
-                          : 'w-2 bg-white/40'
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
