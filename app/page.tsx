@@ -112,7 +112,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden py-8 pt-32 sm:pt-36 sm:gradient-hero">
+      <section className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center justify-center overflow-hidden py-6 pt-28 sm:pt-36 sm:gradient-hero">
         {/* Mobile Background Image - doar pe telefon */}
         <div className="sm:hidden absolute inset-0 z-0">
           <Image
@@ -250,10 +250,10 @@ const HomePage = () => {
                     {stats.map((stat, index) => (
                       <div
                         key={index}
-                        className="bg-white/20 backdrop-blur-md rounded-xl p-5 text-center border border-white/30 flex-shrink-0 w-full shadow-lg"
+                        className="bg-white/20 backdrop-blur-md rounded-xl p-3 text-center border border-white/30 flex-shrink-0 w-full shadow-lg"
                       >
-                        <div className="text-4xl font-bold text-white mb-1">{stat.number}</div>
-                        <div className="text-sm text-white/90 font-medium">{stat.label}</div>
+                        <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                        <div className="text-xs text-white/90 font-medium">{stat.label}</div>
                       </div>
                     ))}
                   </motion.div>
