@@ -63,7 +63,7 @@ export default function ElectricaAutoPage() {
                 {serviceData.title}
               </h1>
               
-              <p className="text-xl text-blue-accent leading-relaxed">
+              <p className="text-base sm:text-xl text-blue-accent leading-relaxed">
                 {serviceData.description}
               </p>
 
