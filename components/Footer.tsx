@@ -108,7 +108,15 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © {currentYear} KRS SERVICE AUTO. Toate drepturile rezervate.
+              © {currentYear} KRS SERVICE AUTO. Toate drepturile rezervate. Realizat de{' '}
+              <a 
+                href="https://clickfixit.ro" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-accent hover:text-white transition-colors"
+              >
+                ClickFixIT
+              </a>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link href="/politica-gdpr" className="text-gray-400 hover:text-blue-accent transition-colors">
